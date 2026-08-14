@@ -6,7 +6,6 @@ import {
   Code2,
   Smartphone,
   Layout,
-  Cloud,
   Terminal,
   ArrowRight,
 } from "lucide-react";
@@ -32,12 +31,6 @@ export default function WhatWeDoSection() {
       link: "/services#uiux-design",
     },
     {
-      icon: Cloud,
-      title: "Cloud & DevOps",
-      desc: "Scalable cloud solutions and DevOps practices to ensure reliability and performance.",
-      link: "/services#cloud-devops",
-    },
-    {
       icon: Terminal,
       title: "Custom Software",
       desc: "Robust software solutions tailored to your unique business requirements.",
@@ -55,8 +48,6 @@ export default function WhatWeDoSection() {
             </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold font-heading text-[#0B1623] mt-2">
               End-to-End Digital Solutions
-              <br />
-              Built for the Future
             </h2>
             <p className="text-slate-600 text-sm max-w-xl mt-3">
               From ideation to deployment, we deliver tailored solutions that

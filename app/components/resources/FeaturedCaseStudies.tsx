@@ -25,7 +25,7 @@ export default function FeaturedCaseStudies() {
       metrics: [
         { label: "Increase in Appointments", val: "70%" },
         { label: "User Rating", val: "4.8★" },
-        { label: "Downloads", val: "50K+" },
+        { label: "Active Users", val: "50K+" },
       ],
       image: "/images/mediflow_app.png",
     },

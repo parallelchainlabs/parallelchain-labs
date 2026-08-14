@@ -8,8 +8,8 @@ import { Clock } from "lucide-react";
 export default function RelatedPostsGrid() {
   const posts = [
     {
-      badge: "CLOUD & DEVOPS",
-      title: "Cloud-Native Architecture: Why It Matters",
+      badge: "FULL-STACK ARCHITECTURE",
+      title: "Modern Full-Stack Architecture: Why It Matters",
       date: "Apr 30, 2024",
       readTime: "7 min read",
       image: "/images/services_hero_3d.png",

@@ -151,7 +151,7 @@ export default function Footer() {
                     href="/services#web-dev"
                     className="hover:text-[#2CCFD3] transition-colors"
                   >
-                    Web
+                    Web Development
                   </Link>
                 </li>
                 <li>
@@ -159,15 +159,7 @@ export default function Footer() {
                     href="/services#mobile-dev"
                     className="hover:text-[#2CCFD3] transition-colors"
                   >
-                    Mobile
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/services#cloud-devops"
-                    className="hover:text-[#2CCFD3] transition-colors"
-                  >
-                    Cloud
+                    Mobile Apps
                   </Link>
                 </li>
                 <li>
@@ -175,15 +167,23 @@ export default function Footer() {
                     href="/services#uiux-design"
                     className="hover:text-[#2CCFD3] transition-colors"
                   >
-                    UI/UX
+                    UI/UX Design
                   </Link>
                 </li>
                 <li>
                   <Link
-                    href="/services#cloud-devops"
+                    href="/services#api-dev"
                     className="hover:text-[#2CCFD3] transition-colors"
                   >
-                    DevOps
+                    API Development
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/services#custom-software"
+                    className="hover:text-[#2CCFD3] transition-colors"
+                  >
+                    Custom Software
                   </Link>
                 </li>
               </ul>

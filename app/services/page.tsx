@@ -9,6 +9,7 @@ import ConsultationModal from "../components/ConsultationModal";
 import ServicesHero from "../components/services/ServicesHero";
 import ServiceCards from "../components/services/ServiceCards";
 import DevelopmentProcess from "../components/services/DevelopmentProcess";
+import LeadershipFounders from "../components/services/LeadershipFounders";
 import WhyChooseUsServices from "../components/services/WhyChooseUsServices";
 import ServicesCta from "../components/services/ServicesCta";
 
@@ -29,6 +30,9 @@ export default function ServicesPage() {
 
         {/* 6 Step Development Process */}
         <DevelopmentProcess />
+
+        {/* Leadership & Founders */}
+        <LeadershipFounders />
 
         {/* Why Choose Us */}
         <WhyChooseUsServices />

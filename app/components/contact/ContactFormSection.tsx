@@ -135,7 +135,7 @@ export default function ContactFormSection() {
                       <option value="web-dev">Web Development</option>
                       <option value="mobile-dev">Mobile App Development</option>
                       <option value="uiux-design">UI/UX Design</option>
-                      <option value="cloud-devops">Cloud & DevOps</option>
+                      <option value="api-dev">API Development</option>
                       <option value="custom-software">
                         Custom Enterprise Software
                       </option>

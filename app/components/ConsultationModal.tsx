@@ -115,7 +115,7 @@ export default function ConsultationModal({
                       Mobile App Dev
                     </option>
                     <option value="UI/UX Design">UI/UX Design</option>
-                    <option value="Cloud & DevOps">Cloud & DevOps</option>
+                    <option value="API Development">API Development</option>
                     <option value="Custom Software">Custom Software</option>
                   </select>
                 </div>

@@ -29,7 +29,7 @@ export default function BlogSidebar() {
       image: "/images/mediflow_app.png",
     },
     {
-      title: "Cloud-Native Architecture: Why It Matters",
+      title: "High-Performance Backend Architecture: Why It Matters",
       date: "Apr 30, 2024",
       image: "/images/services_hero_3d.png",
     },
@@ -43,7 +43,7 @@ export default function BlogSidebar() {
   const categories = [
     { name: "Web Development", count: 18 },
     { name: "Mobile Development", count: 14 },
-    { name: "Cloud & DevOps", count: 10 },
+    { name: "Backend & APIs", count: 10 },
     { name: "UI/UX Design", count: 8 },
     { name: "Business & Strategy", count: 6 },
   ];
@@ -54,7 +54,7 @@ export default function BlogSidebar() {
     "Node.js",
     "JavaScript",
     "TypeScript",
-    "DevOps",
+    "Tailwind CSS",
     "Docker",
     "UI/UX",
     "MongoDB",
@@ -162,7 +162,7 @@ export default function BlogSidebar() {
           Stay Ahead with Expert Insights
         </h3>
         <p className="text-xs text-slate-600 leading-relaxed mb-6">
-          Subscribe to our newsletter and get the latest articles, guides, and
+          Subscribe to our newsletter and get the latest articles, insights, and
           industry updates straight to your inbox.
         </p>
 

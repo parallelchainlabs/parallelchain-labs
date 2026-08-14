@@ -66,32 +66,35 @@ export default function DevelopmentProcess() {
 
         {/* 6 Step Horizontal Process */}
         <div className="relative">
-          {/* Connector line for desktop */}
-          <div className="hidden lg:block absolute top-10 left-12 right-12 h-0.5 border-t-2 border-dashed border-slate-300 -z-0" />
+          {/* Connector line for desktop - starts at first icon and ends at last icon */}
+          <div className="hidden lg:block absolute top-6 left-[8.333%] right-[8.333%] h-0.5 border-t-2 border-dashed border-slate-300 z-0" />
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 relative z-10">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 gap-y-10 relative z-10">
             {steps.map((proc, idx) => {
               const ProcessIcon = proc.icon;
               return (
                 <div
                   key={idx}
-                  className="group bg-[#F7F9FB] border border-slate-200 rounded-2xl p-5 text-center transition-all duration-300 shadow-sm hover:border-[#0E7C86] hover:shadow-md hover:-translate-y-1 flex flex-col justify-between"
+                  className="group flex flex-col items-center gap-3 relative"
                 >
-                  <div>
-                    {/* Icon Circle Inside Card with Subtle Glow */}
-                    <div className="w-12 h-12 rounded-full bg-white text-[#0E7C86] border border-slate-200 flex items-center justify-center mx-auto mb-3 shadow-sm transition-all duration-300 group-hover:bg-[#0E7C86] group-hover:text-white group-hover:border-[#2CCFD3] group-hover:shadow-[0_0_12px_rgba(44,207,211,0.35)]">
-                      <ProcessIcon className="w-5 h-5 transition-transform duration-300 group-hover:scale-110" />
-                    </div>
+                  {/* Floating Icon Completely Outside & Above Card */}
+                  <div className="w-12 h-12 rounded-full bg-white text-[#0E7C86] border border-slate-200 flex items-center justify-center shadow-md transition-all duration-300 z-10 group-hover:bg-[#0E7C86] group-hover:text-white group-hover:border-[#2CCFD3] group-hover:shadow-[0_0_22px_rgba(14,124,134,0.65),0_0_35px_rgba(44,207,211,0.45)] group-hover:-translate-y-1.5 group-hover:scale-110">
+                    <ProcessIcon className="w-5 h-5 transition-transform duration-300 group-hover:scale-110" />
+                  </div>
 
-                    <div className="text-xs font-bold text-[#0E7C86] font-mono mb-1">
-                      {proc.step}
+                  {/* The Card */}
+                  <div className="w-full flex-1 bg-[#F7F9FB] border border-slate-200 rounded-2xl p-5 text-center transition-all duration-300 shadow-sm group-hover:border-[#0E7C86] group-hover:shadow-lg group-hover:-translate-y-1 flex flex-col justify-between">
+                    <div>
+                      <div className="text-xs font-bold text-[#0E7C86] font-mono mb-1">
+                        {proc.step}
+                      </div>
+                      <h3 className="text-sm font-bold font-heading text-[#0B1623] mb-2">
+                        {proc.title}
+                      </h3>
+                      <p className="text-[11px] text-slate-600 leading-relaxed">
+                        {proc.desc}
+                      </p>
                     </div>
-                    <h3 className="text-sm font-bold font-heading text-[#0B1623] mb-2">
-                      {proc.title}
-                    </h3>
-                    <p className="text-[11px] text-slate-600 leading-relaxed">
-                      {proc.desc}
-                    </p>
                   </div>
                 </div>
               );

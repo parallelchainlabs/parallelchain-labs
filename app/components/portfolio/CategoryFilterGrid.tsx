@@ -14,7 +14,6 @@ export default function CategoryFilterGrid() {
     "Web Development",
     "Mobile Apps",
     "UI/UX Design",
-    "Cloud & DevOps",
     "Custom Software",
   ];
 
@@ -73,15 +72,6 @@ export default function CategoryFilterGrid() {
       desc: "Learning management system with course management, live classes, assessments, and progress tracking for students.",
       tags: ["React", "Node.js", "PostgreSQL"],
       image: "/images/edusphere_lms.png",
-    },
-    {
-      id: "transpotrack",
-      category: "Cloud & DevOps",
-      industry: "Logistics",
-      title: "TranspoTrack System",
-      desc: "Logistics and fleet management system with real-time tracking, route optimization, and maintenance management.",
-      tags: ["Angular", ".NET Core", "SQL Server"],
-      image: "/images/transpotrack.png",
     },
   ];
 

@@ -15,7 +15,7 @@ export default function CaseStudyHero({
   const metaItems = [
     { label: "Client", val: "SwiftCare Health Pvt. Ltd." },
     { label: "Industry", val: "Healthcare" },
-    { label: "Services", val: "Web Dev, UI/UX, API, Cloud" },
+    { label: "Services", val: "Web Dev, UI/UX, API, Custom Software" },
     { label: "Duration", val: "4 Months" },
     { label: "Year", val: "2024" },
   ];

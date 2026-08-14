@@ -2,15 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import {
-  Edit3,
-  Briefcase,
-  HelpCircle,
-  Code2,
-  BookOpen,
-  Download,
-  ArrowRight,
-} from "lucide-react";
+import { Edit3, Briefcase, HelpCircle, ArrowRight } from "lucide-react";
 
 export default function CategoryExplorer() {
   const categories = [
@@ -19,36 +11,21 @@ export default function CategoryExplorer() {
       desc: "Latest articles, industry insights, and expert opinions on technology and business.",
       icon: Edit3,
       linkText: "Explore Blog",
+      link: "/blog",
     },
     {
       title: "Case Studies",
       desc: "In-depth stories of how we solved real challenges and delivered measurable results.",
       icon: Briefcase,
       linkText: "Explore Case Studies",
+      link: "/case-studies",
     },
     {
       title: "FAQs",
       desc: "Find answers to common questions about our services, process, and engagement.",
       icon: HelpCircle,
       linkText: "Explore FAQs",
-    },
-    {
-      title: "Technology Stack",
-      desc: "Discover the technologies and tools we use to build scalable digital solutions.",
-      icon: Code2,
-      linkText: "Explore Technologies",
-    },
-    {
-      title: "Guides",
-      desc: "Step-by-step guides and best practices to help you make better tech decisions.",
-      icon: BookOpen,
-      linkText: "Explore Guides",
-    },
-    {
-      title: "Downloads",
-      desc: "E-books, checklists, and resources to support your digital transformation.",
-      icon: Download,
-      linkText: "Explore Downloads",
+      link: "/resources#faqs",
     },
   ];
 
@@ -64,7 +41,7 @@ export default function CategoryExplorer() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {categories.map((cat, idx) => {
             const IconComponent = cat.icon;
             return (
@@ -86,7 +63,7 @@ export default function CategoryExplorer() {
 
                 <div className="pt-4 border-t border-slate-100">
                   <Link
-                    href="#blog"
+                    href={cat.link}
                     className="inline-flex items-center gap-1.5 text-xs font-bold text-[#0E7C86] hover:underline transition-colors"
                   >
                     <span>{cat.linkText}</span>

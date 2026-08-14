@@ -7,7 +7,7 @@ import { ChevronRight, Search } from "lucide-react";
 
 export default function ResourcesHero() {
   const [searchQuery, setSearchQuery] = useState("");
-  const popularTags = ["Next.js", "React", "Cloud", "UI/UX", "DevOps"];
+  const popularTags = ["Next.js", "React", "TypeScript", "UI/UX", "Mobile"];
 
   return (
     <section className="relative overflow-hidden pt-8 pb-14 sm:pt-10 sm:pb-16 lg:pt-12 lg:pb-16 bg-[#0B1623] bg-grid-pattern">
@@ -33,9 +33,8 @@ export default function ResourcesHero() {
             </h1>
 
             <p className="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-              Explore our blogs, case studies, guides, FAQs, and downloads to
-              stay informed and empowered with the right information for your
-              business.
+              Explore our blogs, case studies, and FAQs to stay informed and
+              empowered with actionable technology insights for your business.
             </p>
 
             {/* Search Bar */}
@@ -45,7 +44,7 @@ export default function ResourcesHero() {
                   type="text"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  placeholder="Search articles, guides, topics..."
+                  placeholder="Search articles, case studies, topics..."
                   className="w-full pl-12 pr-4 py-3.5 rounded-xl bg-slate-900/90 border border-slate-700 text-white placeholder-slate-400 text-xs focus:outline-none focus:border-[#2CCFD3] shadow-lg"
                 />
                 <Search className="w-4 h-4 text-slate-400 absolute left-4 top-4" />

@@ -40,8 +40,8 @@ export default function LatestArticlesSection() {
     },
     {
       date: "May 15, 2024",
-      category: "Cloud",
-      title: "Why Cloud Migration Is Essential for Your Business",
+      category: "Architecture",
+      title: "Building High-Performance Full-Stack Applications",
       readTime: "6 min read",
     },
     {
