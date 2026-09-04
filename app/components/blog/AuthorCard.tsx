@@ -40,7 +40,7 @@ export default function AuthorCard() {
           </div>
 
           <Link
-            href="/resources#blog"
+            href="/blog"
             className="inline-flex items-center justify-center px-4 py-2 bg-[#0E7C86] hover:bg-[#0B6871] text-white font-bold text-xs rounded-xl transition-colors shadow-sm self-center sm:self-auto"
           >
             View all posts

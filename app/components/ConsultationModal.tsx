@@ -2,6 +2,8 @@
 
 import React, { useState } from "react";
 import { X, Send, CheckCircle2, Cpu } from "lucide-react";
+import { useLanguage } from "./LanguageProvider";
+import { openLabMailto } from "../lib/mailto";
 
 interface ConsultationModalProps {
   isOpen: boolean;
@@ -12,12 +14,13 @@ export default function ConsultationModal({
   isOpen,
   onClose,
 }: ConsultationModalProps) {
+  const { t } = useLanguage();
   const [submitted, setSubmitted] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    service: "Web Development",
-    budget: "$5,000 - $10,000",
+    service: "dApps & Protocols",
+    budget: "Research discussion",
     message: "",
   });
 
@@ -25,10 +28,18 @@ export default function ConsultationModal({
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    openLabMailto(
+      `Consultation — ${formData.service}`,
+      [
+        `Name: ${formData.name}`,
+        `Email: ${formData.email}`,
+        `Area: ${formData.service}`,
+        `Engagement: ${formData.budget}`,
+        "",
+        formData.message,
+      ].join("\n"),
+    );
     setSubmitted(true);
-    setTimeout(() => {
-      // reset after feedback
-    }, 500);
   };
 
   const handleReset = () => {
@@ -45,7 +56,7 @@ export default function ConsultationModal({
         <button
           onClick={onClose}
           className="absolute top-5 right-5 p-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-colors"
-          aria-label="Close modal"
+          aria-label={t.modal.closeAria}
         >
           <X className="w-5 h-5" />
         </button>
@@ -57,23 +68,22 @@ export default function ConsultationModal({
                 <Cpu className="w-5 h-5" />
               </div>
               <h2 className="text-xl font-bold font-heading text-white">
-                Book a Free Consultation
+                {t.modal.title}
               </h2>
             </div>
             <p className="text-xs text-slate-400 mb-6">
-              Let&apos;s discuss your project goals, timeline, and technical
-              requirements with our engineering team.
+              {t.modal.intro}
             </p>
 
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
                 <label className="block text-xs font-semibold text-slate-300 mb-1">
-                  Full Name
+                  {t.modal.fullName}
                 </label>
                 <input
                   type="text"
                   required
-                  placeholder="e.g. Alex Morgan"
+                  placeholder={t.modal.namePh}
                   value={formData.name}
                   onChange={(e) =>
                     setFormData({ ...formData, name: e.target.value })
@@ -84,7 +94,7 @@ export default function ConsultationModal({
 
               <div>
                 <label className="block text-xs font-semibold text-slate-300 mb-1">
-                  Work Email
+                  {t.modal.workEmail}
                 </label>
                 <input
                   type="email"
@@ -101,7 +111,7 @@ export default function ConsultationModal({
               <div className="grid grid-cols-2 gap-4">
                 <div>
                   <label className="block text-xs font-semibold text-slate-300 mb-1">
-                    Service Needed
+                    {t.modal.service}
                   </label>
                   <select
                     value={formData.service}
@@ -110,19 +120,16 @@ export default function ConsultationModal({
                     }
                     className="w-full px-3 py-2.5 bg-[#0B1623] border border-slate-700 rounded-lg text-sm text-white focus:outline-none focus:border-[#2CCFD3] transition-colors"
                   >
-                    <option value="Web Development">Web Development</option>
-                    <option value="Mobile App Development">
-                      Mobile App Dev
-                    </option>
-                    <option value="UI/UX Design">UI/UX Design</option>
-                    <option value="API Development">API Development</option>
-                    <option value="Custom Software">Custom Software</option>
+                    <option value="dApps & Protocols">{t.nav.dapps}</option>
+                    <option value="Digital Identity">{t.nav.identity}</option>
+                    <option value="Decentralized Finance">{t.nav.defi}</option>
+                    <option value="AI Infrastructure">{t.nav.ai}</option>
                   </select>
                 </div>
 
                 <div>
                   <label className="block text-xs font-semibold text-slate-300 mb-1">
-                    Estimated Budget
+                    {t.modal.budget}
                   </label>
                   <select
                     value={formData.budget}
@@ -131,22 +138,25 @@ export default function ConsultationModal({
                     }
                     className="w-full px-3 py-2.5 bg-[#0B1623] border border-slate-700 rounded-lg text-sm text-white focus:outline-none focus:border-[#2CCFD3] transition-colors"
                   >
-                    <option value="< $5,000">&lt; $5,000</option>
-                    <option value="$5,000 - $10,000">$5,000 - $10,000</option>
-                    <option value="$10,000 - $25,000">$10,000 - $25,000</option>
-                    <option value="$25,000+">$25,000+</option>
+                    <option value="Research discussion">
+                      {t.modal.engResearch}
+                    </option>
+                    <option value="Pilot">{t.modal.engPilot}</option>
+                    <option value="Production deployment">
+                      {t.modal.engProduction}
+                    </option>
                   </select>
                 </div>
               </div>
 
               <div>
                 <label className="block text-xs font-semibold text-slate-300 mb-1">
-                  Project Summary
+                  {t.modal.summary}
                 </label>
                 <textarea
                   rows={3}
                   required
-                  placeholder="Tell us briefly about your goals, features, and target launch timeline..."
+                  placeholder={t.modal.summaryPh}
                   value={formData.message}
                   onChange={(e) =>
                     setFormData({ ...formData, message: e.target.value })
@@ -160,7 +170,7 @@ export default function ConsultationModal({
                 className="w-full flex items-center justify-center gap-2 py-3 bg-[#0E7C86] hover:bg-[#2CCFD3] hover:text-[#0B1623] text-white font-semibold rounded-lg shadow-lg transition-all duration-300"
               >
                 <Send className="w-4 h-4" />
-                <span>Submit Consultation Request</span>
+                <span>{t.modal.submit}</span>
               </button>
             </form>
           </div>
@@ -170,21 +180,20 @@ export default function ConsultationModal({
               <CheckCircle2 className="w-10 h-10" />
             </div>
             <h3 className="text-2xl font-bold font-heading text-white">
-              Consultation Requested!
+              {t.modal.doneTitle}
             </h3>
             <p className="text-sm text-slate-300 max-w-xs mx-auto leading-relaxed">
-              Thank you,{" "}
+              {t.modal.thankYou}{" "}
               <span className="text-[#2CCFD3] font-semibold">
                 {formData.name}
               </span>
-              . Our technical director will review your project details and
-              respond within 24 hours.
+              . {t.modal.doneDesc}
             </p>
             <button
               onClick={handleReset}
               className="mt-4 px-6 py-2.5 bg-slate-800 hover:bg-slate-700 text-white text-sm font-semibold rounded-lg transition-colors"
             >
-              Close Window
+              {t.modal.close}
             </button>
           </div>
         )}

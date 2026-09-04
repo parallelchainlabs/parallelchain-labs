@@ -4,29 +4,31 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
+import { useLanguage } from "../LanguageProvider";
 
 export default function FeaturedWorkSection() {
+  const { t } = useLanguage();
   const projects = [
     {
-      title: "Finova Dashboard",
-      category: "Fintech",
-      desc: "A comprehensive financial management platform for businesses with real-time analytics, budget tracking, and automated reporting.",
-      image: "/images/finova_dashboard.png",
-      tags: ["React", "Node.js", "MongoDB"],
+      title: t.home.proj1Title,
+      category: t.portfolio.enterprise,
+      desc: t.home.proj1Desc,
+      image: "/images/work_novaledger.png",
+      tags: ["Enterprise", "PoIM", "Privacy"],
     },
     {
-      title: "MediFlow App",
-      category: "Healthcare",
-      desc: "Telemedicine mobile app connecting doctors and patients seamlessly with appointment booking, video consultations, and e-prescriptions.",
-      image: "/images/mediflow_app.png",
-      tags: ["Flutter", "Firebase", "Node.js"],
+      title: t.home.proj2Title,
+      category: t.nav.identity,
+      desc: t.home.proj2Desc,
+      image: "/images/work_privid.png",
+      tags: ["BINGO", "KYC", "GDPR"],
     },
     {
-      title: "ShopHub Platform",
-      category: "E-commerce",
-      desc: "Feature-rich e-commerce platform with modern shopping experience, recommendations engine, secure checkout, and inventory sync.",
-      image: "/images/shophub_platform.png",
-      tags: ["Next.js", "Tailwind CSS", "Stripe"],
+      title: t.home.proj3Title,
+      category: t.nav.dapps,
+      desc: t.home.proj3Desc,
+      image: "/images/work_aether.png",
+      tags: ["Mainnet", "PoS", "IPC"],
     },
   ];
 
@@ -36,16 +38,15 @@ export default function FeaturedWorkSection() {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
           <div>
             <span className="text-[#0E7C86] text-xs font-bold tracking-wider uppercase font-heading">
-              OUR WORK
+              {t.home.ourWork}
             </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold font-heading text-[#0B1623] mt-2">
-              Delivering Impactful
+              {t.home.ourWorkTitle1}
               <br />
-              Digital Experiences
+              {t.home.ourWorkTitle2}
             </h2>
             <p className="text-slate-600 text-sm max-w-xl mt-3">
-              We partner with ambitious businesses to build products that solve
-              real problems and create measurable results.
+              {t.home.ourWorkDesc}
             </p>
           </div>
 
@@ -53,7 +54,7 @@ export default function FeaturedWorkSection() {
             href="/portfolio"
             className="mt-4 md:mt-0 inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#0E7C86] hover:bg-[#0B6871] text-white font-bold text-xs transition-all shadow-md"
           >
-            <span>View All Projects</span>
+            <span>{t.home.viewAllProjects}</span>
             <ArrowRight className="w-4 h-4" />
           </Link>
         </div>

@@ -1,5 +1,5 @@
-import CaseStudyPage from "../page";
+import { redirect } from "next/navigation";
 
 export default function CaseStudySlugPage() {
-  return <CaseStudyPage />;
+  redirect("/portfolio");
 }

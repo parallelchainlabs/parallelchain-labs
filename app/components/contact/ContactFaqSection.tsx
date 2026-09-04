@@ -1,48 +1,26 @@
 "use client";
 
 import React, { useState } from "react";
-import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { useLanguage } from "../LanguageProvider";
 
 export default function ContactFaqSection() {
+  const { t } = useLanguage();
   const [openFaq, setOpenFaq] = useState<number | null>(0);
 
   const contactFaqs = [
-    {
-      q: "How long does it take to get a response?",
-      a: "We guarantee a response within 24 business hours. Our team reviews every inquiry thoroughly to provide expert recommendations.",
-    },
-    {
-      q: "Do you work with startups?",
-      a: "Yes! We specialize in helping early-stage startups build MVPs, scale digital infrastructure, and launch fast.",
-    },
-    {
-      q: "Can you sign an NDA?",
-      a: "Absolutely. We are 100% committed to intellectual property protection and happy to sign a Non-Disclosure Agreement before discussing project details.",
-    },
-    {
-      q: "What is your typical project timeline?",
-      a: "Project timelines depend on scope. Simple web apps take 3–6 weeks, while comprehensive mobile or enterprise software takes 3–6 months.",
-    },
-    {
-      q: "What if I'm not sure about my requirements?",
-      a: "No problem at all! Our solution architects will conduct a free discovery consultation to help define your technical scope, architecture, and roadmap.",
-    },
+    { q: t.contact.faq1q, a: t.contact.faq1a },
+    { q: t.contact.faq2q, a: t.contact.faq2a },
+    { q: t.contact.faq3q, a: t.contact.faq3a },
+    { q: t.contact.faq4q, a: t.contact.faq4a },
+    { q: t.contact.faq5q, a: t.contact.faq5a },
   ];
 
   return (
     <div className="lg:col-span-6 space-y-6">
       <div className="flex items-center justify-between">
         <h2 className="text-2xl sm:text-3xl font-extrabold font-heading text-[#0B1623]">
-          Frequently Asked Questions
+          {t.contact.faqTitle}
         </h2>
-        <Link
-          href="/resources#faqs"
-          className="text-xs font-bold text-[#0E7C86] hover:underline flex items-center gap-1"
-        >
-          <span>View all FAQs</span>
-          <ArrowRight className="w-3.5 h-3.5" />
-        </Link>
       </div>
 
       <div className="space-y-3">

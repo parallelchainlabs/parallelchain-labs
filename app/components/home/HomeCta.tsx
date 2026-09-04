@@ -2,12 +2,14 @@
 
 import React from "react";
 import { Send, ArrowRight } from "lucide-react";
+import { useLanguage } from "../LanguageProvider";
 
 interface HomeCtaProps {
   onOpenConsultation: () => void;
 }
 
 export default function HomeCta({ onOpenConsultation }: HomeCtaProps) {
+  const { t } = useLanguage();
   return (
     <section className="py-16 bg-white text-slate-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -19,11 +21,10 @@ export default function HomeCta({ onOpenConsultation }: HomeCtaProps) {
             </div>
             <div className="space-y-1 text-left">
               <h2 className="text-2xl sm:text-3xl font-extrabold font-heading text-white">
-                Have a Project in Mind?
+                {t.home.ctaTitle}
               </h2>
               <p className="text-xs sm:text-sm text-teal-100">
-                Let&apos;s discuss how we can help you turn your ideas into
-                powerful digital solutions.
+                {t.home.ctaDesc}
               </p>
             </div>
           </div>
@@ -33,7 +34,7 @@ export default function HomeCta({ onOpenConsultation }: HomeCtaProps) {
             onClick={onOpenConsultation}
             className="z-10 shrink-0 px-8 py-3.5 bg-[#0B1623] hover:bg-[#2CCFD3] hover:text-[#0B1623] text-white font-bold text-xs rounded-xl transition-all shadow-xl flex items-center gap-2"
           >
-            <span>Get In Touch</span>
+            <span>{t.home.getInTouch}</span>
             <ArrowRight className="w-4 h-4" />
           </button>
         </div>

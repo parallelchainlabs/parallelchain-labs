@@ -2,95 +2,93 @@
 
 import React from "react";
 import { Building, Building2, Globe, ArrowRight } from "lucide-react";
+import { useLanguage } from "../LanguageProvider";
 
 export default function OfficeCardsSection() {
+  const { t } = useLanguage();
   return (
     <div className="lg:col-span-6 space-y-6">
       <div>
         <h2 className="text-2xl sm:text-3xl font-extrabold font-heading text-[#0B1623]">
-          Our Locations
+          {t.contact.locations}
         </h2>
         <p className="text-xs sm:text-sm text-slate-600 mt-1">
-          Majorly operated from Lalitpur with key presence in Birgunj and
-          serving clients worldwide.
+          {t.contact.locationsDesc}
         </p>
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-        {/* Office 1: Headquarters (Lalitpur) */}
         <div className="bg-[#F7F9FB] border border-slate-200 rounded-2xl p-5 text-left hover:border-[#0E7C86] transition-colors shadow-sm flex flex-col justify-between">
           <div>
             <div className="w-10 h-10 rounded-xl bg-[#0E7C86]/10 text-[#0E7C86] flex items-center justify-center mb-3">
               <Building className="w-5 h-5" />
             </div>
             <h3 className="text-xs font-bold font-heading text-[#0B1623]">
-              Headquarters
+              {t.contact.hq}
             </h3>
             <p className="text-[11px] text-slate-600 mt-1 leading-relaxed">
-              Imadol, Lalitpur
+              100 Tras Street, #16-01
               <br />
-              Bagmati Province, Nepal
+              100 AM, Singapore 079027
             </p>
           </div>
           <a
-            href="https://maps.app.goo.gl/fa84PRvN3VryUcnh7"
+            href="https://www.google.com/maps/search/?api=1&query=100+Tras+Street+%2316-01+Singapore+079027"
             target="_blank"
             rel="noreferrer"
             className="inline-flex items-center gap-1 text-[11px] font-bold text-[#0E7C86] hover:underline pt-3"
           >
-            <span>Get Directions</span>
+            <span>{t.contact.directions}</span>
             <ArrowRight className="w-3 h-3" />
           </a>
         </div>
 
-        {/* Office 2: Regional Hub (Birgunj) */}
         <div className="bg-[#F7F9FB] border border-slate-200 rounded-2xl p-5 text-left hover:border-[#0E7C86] transition-colors shadow-sm flex flex-col justify-between">
           <div>
             <div className="w-10 h-10 rounded-xl bg-[#0E7C86]/10 text-[#0E7C86] flex items-center justify-center mb-3">
               <Building2 className="w-5 h-5" />
             </div>
             <h3 className="text-xs font-bold font-heading text-[#0B1623]">
-              Regional Hub
+              {t.contact.hk}
             </h3>
             <p className="text-[11px] text-slate-600 mt-1 leading-relaxed">
-              Birgunj, Parsa
+              26/F, Three Exchange Square
               <br />
-              Madhesh Province, Nepal
+              Central, Hong Kong
             </p>
           </div>
           <a
-            href="https://www.google.com/maps/search/Birgunj,+Nepal"
+            href="https://www.google.com/maps/search/?api=1&query=Three+Exchange+Square+8+Connaught+Place+Central+Hong+Kong"
             target="_blank"
             rel="noreferrer"
             className="inline-flex items-center gap-1 text-[11px] font-bold text-[#0E7C86] hover:underline pt-3"
           >
-            <span>Get Directions</span>
+            <span>{t.contact.directions}</span>
             <ArrowRight className="w-3 h-3" />
           </a>
         </div>
 
-        {/* Office 3: Global Remote Presence */}
         <div className="bg-[#F7F9FB] border border-slate-200 rounded-2xl p-5 text-left hover:border-[#0E7C86] transition-colors shadow-sm flex flex-col justify-between">
           <div>
             <div className="w-10 h-10 rounded-xl bg-[#0E7C86]/10 text-[#0E7C86] flex items-center justify-center mb-3">
               <Globe className="w-5 h-5" />
             </div>
             <h3 className="text-xs font-bold font-heading text-[#0B1623]">
-              Global Presence
+              {t.contact.regional}
             </h3>
             <p className="text-[11px] text-slate-600 mt-1 leading-relaxed">
-              Serving Worldwide
+              {t.contact.thailand}
               <br />
-              Remote-First Teams
+              {t.contact.distributed}
             </p>
           </div>
           <a
-            href="https://maps.google.com"
+            href="https://www.linkedin.com/company/parallelchain-lab/"
             target="_blank"
             rel="noreferrer"
             className="inline-flex items-center gap-1 text-[11px] font-bold text-[#0E7C86] hover:underline pt-3"
           >
-            <span>View Coverage</span>
+            <span>{t.contact.learnMore}</span>
             <ArrowRight className="w-3 h-3" />
           </a>
         </div>

@@ -10,20 +10,18 @@ import {
   Menu,
   X,
   Cpu,
-  Code2,
-  Smartphone,
-  Layout,
-  Terminal,
-  Wrench,
-  BookOpen,
-  FileText,
-  HelpCircle,
+  Blocks,
+  Fingerprint,
+  Landmark,
+  BrainCircuit,
   Layers,
   Home as HomeIcon,
   Briefcase,
   Users,
   Mail,
 } from "lucide-react";
+import LanguageSwitcher from "./LanguageSwitcher";
+import { useLanguage } from "./LanguageProvider";
 
 interface NavbarProps {
   onOpenConsultation?: () => void;
@@ -31,9 +29,9 @@ interface NavbarProps {
 
 export default function Navbar({ onOpenConsultation }: NavbarProps) {
   const pathname = usePathname();
+  const { t } = useLanguage();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
-  const [resourcesDropdownOpen, setResourcesDropdownOpen] = useState(false);
 
   const isActive = (path: string) => {
     if (path === "/" && pathname === "/") return true;
@@ -45,17 +43,17 @@ export default function Navbar({ onOpenConsultation }: NavbarProps) {
     <header className="sticky top-0 z-50 bg-[#070E17]/95 backdrop-blur-lg border-b border-slate-800/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-0 group">
+        <Link href="/" className="flex items-center gap-2.5 group">
           <Image
-            src="/logo/logo.png"
-            alt="JitSeeTec Logo"
-            width={48}
-            height={48}
-            className="w-18 h-18 object-contain"
+            src="/logo/parallelchain-lab.png"
+            alt="ParallelChain Lab"
+            width={40}
+            height={40}
+            className="w-10 h-10 rounded-lg object-contain bg-white"
             priority
           />
-          <span className="text-2xl font-bold font-heading tracking-tight text-white">
-            JitSeeTec<span className="text-[#2CCFD3]">.</span>
+          <span className="text-lg lg:text-2xl font-bold font-heading tracking-tight text-white">
+            ParallelChain<span className="text-[#2CCFD3]"> Labs</span>
           </span>
         </Link>
 
@@ -69,7 +67,7 @@ export default function Navbar({ onOpenConsultation }: NavbarProps) {
                 : "text-slate-300 hover:text-white hover:bg-slate-800/40"
             }`}
           >
-            Home
+            {t.nav.home}
             {isActive("/") && (
               <span className="absolute bottom-0 left-3.5 right-3.5 h-0.5 bg-[#2CCFD3] rounded-full" />
             )}
@@ -89,7 +87,7 @@ export default function Navbar({ onOpenConsultation }: NavbarProps) {
                   : "text-slate-300 hover:text-white hover:bg-slate-800/40"
               }`}
             >
-              <span>Services</span>
+              <span>{t.nav.services}</span>
               <ChevronDown
                 className={`w-4 h-4 transition-transform duration-200 ${servicesDropdownOpen ? "rotate-180 text-[#2CCFD3]" : ""}`}
               />
@@ -105,52 +103,42 @@ export default function Navbar({ onOpenConsultation }: NavbarProps) {
                   {/* Left Column Services List */}
                   <div className="col-span-7 space-y-1">
                     <Link
-                      href="/services#web-dev"
+                      href="/services#dapps-protocols"
                       className="flex items-center gap-3 p-2 rounded-xl hover:bg-[#0E7C86]/20 text-slate-300 hover:text-white transition-colors group"
                     >
-                      <Code2 className="w-4 h-4 text-[#2CCFD3] group-hover:scale-110 transition-transform" />
+                      <Blocks className="w-4 h-4 text-[#2CCFD3] group-hover:scale-110 transition-transform" />
                       <span className="text-xs font-semibold">
-                        Web Development
+                        {t.nav.dapps}
                       </span>
                     </Link>
 
                     <Link
-                      href="/services#mobile-dev"
+                      href="/services#digital-identity"
                       className="flex items-center gap-3 p-2 rounded-xl hover:bg-[#0E7C86]/20 text-slate-300 hover:text-white transition-colors group"
                     >
-                      <Smartphone className="w-4 h-4 text-[#2CCFD3] group-hover:scale-110 transition-transform" />
+                      <Fingerprint className="w-4 h-4 text-[#2CCFD3] group-hover:scale-110 transition-transform" />
                       <span className="text-xs font-semibold">
-                        Mobile Development
+                        {t.nav.identity}
                       </span>
                     </Link>
 
                     <Link
-                      href="/services#uiux-design"
+                      href="/services#defi"
                       className="flex items-center gap-3 p-2 rounded-xl hover:bg-[#0E7C86]/20 text-slate-300 hover:text-white transition-colors group"
                     >
-                      <Layout className="w-4 h-4 text-[#2CCFD3] group-hover:scale-110 transition-transform" />
+                      <Landmark className="w-4 h-4 text-[#2CCFD3] group-hover:scale-110 transition-transform" />
                       <span className="text-xs font-semibold">
-                        UI/UX Design
+                        {t.nav.defi}
                       </span>
                     </Link>
 
                     <Link
-                      href="/services#api-dev"
+                      href="/services#ai-infrastructure"
                       className="flex items-center gap-3 p-2 rounded-xl hover:bg-[#0E7C86]/20 text-slate-300 hover:text-white transition-colors group"
                     >
-                      <Terminal className="w-4 h-4 text-[#2CCFD3] group-hover:scale-110 transition-transform" />
+                      <BrainCircuit className="w-4 h-4 text-[#2CCFD3] group-hover:scale-110 transition-transform" />
                       <span className="text-xs font-semibold">
-                        API Development
-                      </span>
-                    </Link>
-
-                    <Link
-                      href="/services#custom-software"
-                      className="flex items-center gap-3 p-2 rounded-xl hover:bg-[#0E7C86]/20 text-slate-300 hover:text-white transition-colors group"
-                    >
-                      <Wrench className="w-4 h-4 text-[#2CCFD3] group-hover:scale-110 transition-transform" />
-                      <span className="text-xs font-semibold">
-                        Maintenance & Support
+                        {t.nav.ai}
                       </span>
                     </Link>
                   </div>
@@ -162,11 +150,10 @@ export default function Navbar({ onOpenConsultation }: NavbarProps) {
                         <Layers className="w-5 h-5" />
                       </div>
                       <h4 className="text-xs font-bold text-white mb-1.5 font-heading">
-                        Custom Solutions
+                        {t.nav.web2web3}
                       </h4>
                       <p className="text-[11px] text-slate-400 leading-relaxed mb-4">
-                        Tailored software solutions built to solve your unique
-                        business challenges.
+                        {t.nav.web2web3Desc}
                       </p>
                     </div>
 
@@ -174,7 +161,7 @@ export default function Navbar({ onOpenConsultation }: NavbarProps) {
                       href="/services"
                       className="inline-flex items-center gap-1 text-xs font-semibold text-[#2CCFD3] hover:text-white transition-colors"
                     >
-                      <span>Explore Services</span>
+                      <span>{t.nav.exploreServices}</span>
                       <ArrowRight className="w-3.5 h-3.5" />
                     </Link>
                   </div>
@@ -191,7 +178,7 @@ export default function Navbar({ onOpenConsultation }: NavbarProps) {
                 : "text-slate-300 hover:text-white hover:bg-slate-800/40"
             }`}
           >
-            Portfolio
+            {t.nav.portfolio}
             {isActive("/portfolio") && (
               <span className="absolute bottom-0 left-3.5 right-3.5 h-0.5 bg-[#2CCFD3] rounded-full" />
             )}
@@ -205,94 +192,11 @@ export default function Navbar({ onOpenConsultation }: NavbarProps) {
                 : "text-slate-300 hover:text-white hover:bg-slate-800/40"
             }`}
           >
-            About
+            {t.nav.about}
             {isActive("/about") && (
               <span className="absolute bottom-0 left-3.5 right-3.5 h-0.5 bg-[#2CCFD3] rounded-full" />
             )}
           </Link>
-
-          {/* Resources Dropdown */}
-          <div
-            className="relative"
-            onMouseEnter={() => setResourcesDropdownOpen(true)}
-            onMouseLeave={() => setResourcesDropdownOpen(false)}
-          >
-            <Link
-              href="/resources"
-              className={`px-3.5 py-2 rounded-lg text-sm font-semibold inline-flex items-center gap-1.5 transition-all relative ${
-                isActive("/resources")
-                  ? "text-[#2CCFD3] bg-[#0E7C86]/10"
-                  : "text-slate-300 hover:text-white hover:bg-slate-800/40"
-              }`}
-            >
-              <span>Resources</span>
-              <ChevronDown
-                className={`w-4 h-4 transition-transform duration-200 ${resourcesDropdownOpen ? "rotate-180 text-[#2CCFD3]" : ""}`}
-              />
-              {isActive("/resources") && (
-                <span className="absolute bottom-0 left-3.5 right-3.5 h-0.5 bg-[#2CCFD3] rounded-full" />
-              )}
-            </Link>
-
-            {resourcesDropdownOpen && (
-              <div className="absolute top-full left-0 w-[450px] pt-3 animate-in fade-in slide-in-from-top-2 duration-200">
-                <div className="bg-[#0B1623] border border-slate-700/80 rounded-2xl p-4 shadow-2xl backdrop-blur-xl grid grid-cols-12 gap-4">
-                  {/* Left Column Links */}
-                  <div className="col-span-6 space-y-1">
-                    <Link
-                      href="/blog"
-                      className="flex items-center gap-3 p-2 rounded-xl hover:bg-[#0E7C86]/20 text-slate-300 hover:text-white transition-colors group"
-                    >
-                      <BookOpen className="w-4 h-4 text-[#2CCFD3] group-hover:scale-110 transition-transform" />
-                      <span className="text-xs font-semibold">Blog</span>
-                    </Link>
-
-                    <Link
-                      href="/case-studies"
-                      className="flex items-center gap-3 p-2 rounded-xl hover:bg-[#0E7C86]/20 text-slate-300 hover:text-white transition-colors group"
-                    >
-                      <FileText className="w-4 h-4 text-[#2CCFD3] group-hover:scale-110 transition-transform" />
-                      <span className="text-xs font-semibold">
-                        Case Studies
-                      </span>
-                    </Link>
-
-                    <Link
-                      href="/resources#faqs"
-                      className="flex items-center gap-3 p-2 rounded-xl hover:bg-[#0E7C86]/20 text-slate-300 hover:text-white transition-colors group"
-                    >
-                      <HelpCircle className="w-4 h-4 text-[#2CCFD3] group-hover:scale-110 transition-transform" />
-                      <span className="text-xs font-semibold">FAQs</span>
-                    </Link>
-                  </div>
-
-                  {/* Right Column Promo Card */}
-                  <div className="col-span-6 bg-[#162533]/90 border border-slate-700/60 rounded-xl p-4 flex flex-col justify-between">
-                    <div>
-                      <div className="w-9 h-9 rounded-lg bg-[#0E7C86]/20 text-[#2CCFD3] flex items-center justify-center mb-3">
-                        <FileText className="w-5 h-5" />
-                      </div>
-                      <h4 className="text-xs font-bold text-white mb-1.5 font-heading">
-                        Insights & Knowledge
-                      </h4>
-                      <p className="text-[11px] text-slate-400 leading-relaxed mb-4">
-                        Explore expert insights, in-depth case studies, and
-                        articles to help your business grow.
-                      </p>
-                    </div>
-
-                    <Link
-                      href="/resources"
-                      className="inline-flex items-center gap-1 text-xs font-semibold text-[#2CCFD3] hover:text-white transition-colors"
-                    >
-                      <span>View All Resources</span>
-                      <ArrowRight className="w-3.5 h-3.5" />
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            )}
-          </div>
 
           <Link
             href="/contact"
@@ -302,7 +206,7 @@ export default function Navbar({ onOpenConsultation }: NavbarProps) {
                 : "text-slate-300 hover:text-white hover:bg-slate-800/40"
             }`}
           >
-            Contact
+            {t.nav.contact}
             {isActive("/contact") && (
               <span className="absolute bottom-0 left-3.5 right-3.5 h-0.5 bg-[#2CCFD3] rounded-full" />
             )}
@@ -311,18 +215,19 @@ export default function Navbar({ onOpenConsultation }: NavbarProps) {
 
         {/* CTA Button & Mobile Toggle */}
         <div className="flex items-center gap-3">
+          <LanguageSwitcher />
           <button
             onClick={onOpenConsultation}
             className="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-[#0E7C86] hover:bg-[#2CCFD3] hover:text-[#0B1623] text-white text-sm font-semibold transition-all duration-300 shadow-md hover:shadow-[#2CCFD3]/20"
           >
-            <span>Book a Consultation</span>
+            <span>{t.nav.book}</span>
             <ArrowRight className="w-4 h-4" />
           </button>
 
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="md:hidden p-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 focus:outline-none"
-            aria-label="Toggle menu"
+            aria-label={t.nav.toggleMenu}
           >
             {mobileMenuOpen ? (
               <X className="w-6 h-6" />
@@ -347,7 +252,7 @@ export default function Navbar({ onOpenConsultation }: NavbarProps) {
               }`}
             >
               <HomeIcon className="w-5 h-5 text-[#2CCFD3]" />
-              <span className="text-sm font-semibold">Home</span>
+              <span className="text-sm font-semibold">{t.nav.home}</span>
             </Link>
 
             <Link
@@ -360,7 +265,7 @@ export default function Navbar({ onOpenConsultation }: NavbarProps) {
               }`}
             >
               <Cpu className="w-5 h-5 text-[#2CCFD3]" />
-              <span className="text-sm font-semibold">Services</span>
+              <span className="text-sm font-semibold">{t.nav.services}</span>
             </Link>
 
             <Link
@@ -373,7 +278,7 @@ export default function Navbar({ onOpenConsultation }: NavbarProps) {
               }`}
             >
               <Briefcase className="w-5 h-5 text-[#2CCFD3]" />
-              <span className="text-sm font-semibold">Portfolio</span>
+              <span className="text-sm font-semibold">{t.nav.portfolio}</span>
             </Link>
 
             <Link
@@ -386,20 +291,7 @@ export default function Navbar({ onOpenConsultation }: NavbarProps) {
               }`}
             >
               <Users className="w-5 h-5 text-[#2CCFD3]" />
-              <span className="text-sm font-semibold">About</span>
-            </Link>
-
-            <Link
-              href="/resources"
-              onClick={() => setMobileMenuOpen(false)}
-              className={`flex items-center gap-3 p-3.5 rounded-xl border transition-all ${
-                isActive("/resources")
-                  ? "bg-[#0E7C86]/20 border-[#2CCFD3] text-[#2CCFD3]"
-                  : "bg-[#162533] border-slate-700/60 text-slate-200 hover:text-white"
-              }`}
-            >
-              <BookOpen className="w-5 h-5 text-[#2CCFD3]" />
-              <span className="text-sm font-semibold">Resources</span>
+              <span className="text-sm font-semibold">{t.nav.about}</span>
             </Link>
 
             <Link
@@ -412,7 +304,7 @@ export default function Navbar({ onOpenConsultation }: NavbarProps) {
               }`}
             >
               <Mail className="w-5 h-5 text-[#2CCFD3]" />
-              <span className="text-sm font-semibold">Contact</span>
+              <span className="text-sm font-semibold">{t.nav.contact}</span>
             </Link>
           </div>
 
@@ -423,7 +315,7 @@ export default function Navbar({ onOpenConsultation }: NavbarProps) {
             }}
             className="w-full flex items-center justify-center gap-2 py-3.5 rounded-xl bg-[#0E7C86] hover:bg-[#2CCFD3] hover:text-[#0B1623] text-white text-sm font-bold transition-all shadow-lg"
           >
-            <span>Book a Consultation</span>
+            <span>{t.nav.book}</span>
             <ArrowRight className="w-4 h-4" />
           </button>
         </div>

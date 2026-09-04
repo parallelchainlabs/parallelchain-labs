@@ -33,6 +33,19 @@
   h6 {
     font-family: var(--font-plus-jakarta), sans-serif;
   }
+
+  html.lang-zh body {
+    font-family: var(--font-noto-sc), var(--font-inter), sans-serif;
+  }
+
+  html.lang-zh h1,
+  html.lang-zh h2,
+  html.lang-zh h3,
+  html.lang-zh h4,
+  html.lang-zh h5,
+  html.lang-zh h6 {
+    font-family: var(--font-noto-sc), var(--font-plus-jakarta), sans-serif;
+  }
 }
 
 /* Custom Utilities for Glowing Effects & Gradients */

@@ -16,7 +16,7 @@ export default function BlogDetailHero() {
           </Link>
           <ChevronRight className="w-3.5 h-3.5" />
           <Link
-            href="/resources#blog"
+            href="/blog"
             className="hover:text-white transition-colors"
           >
             Blog

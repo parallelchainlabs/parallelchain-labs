@@ -8,37 +8,37 @@ import { ArrowRight } from "lucide-react";
 export default function FeaturedCaseStudies() {
   const caseStudies = [
     {
-      badge: "Fintech",
-      title: "Finova Dashboard",
-      desc: "A real-time financial management platform that helps businesses track, analyze, and optimize their finances effortlessly.",
+      badge: "DeFi",
+      title: "NovaLedger Markets",
+      desc: "A decentralized financial application for transparent settlement, programmable assets, and real-time treasury operations.",
       metrics: [
-        { label: "Time Saved", val: "40%" },
-        { label: "Faster Reporting", val: "60%" },
-        { label: "Users Impacted", val: "100K+" },
+        { label: "Faster Settlement", val: "40%" },
+        { label: "On-chain Volume", val: "60%" },
+        { label: "Participants", val: "100K+" },
       ],
-      image: "/images/finova_dashboard.png",
+      image: "/images/work_novaledger.png",
     },
     {
-      badge: "Healthcare",
-      title: "MediFlow App",
-      desc: "A telemedicine app connecting doctors and patients seamlessly with secure consultations, appointments, and e-prescriptions.",
+      badge: "Digital Identity",
+      title: "PrivID Credentials",
+      desc: "A privacy-preserving identity system for verifiable credentials, selective disclosure, and user-controlled consent.",
       metrics: [
-        { label: "Increase in Appointments", val: "70%" },
+        { label: "Less Data Shared", val: "70%" },
         { label: "User Rating", val: "4.8★" },
-        { label: "Active Users", val: "50K+" },
+        { label: "Credentials Issued", val: "50K+" },
       ],
-      image: "/images/mediflow_app.png",
+      image: "/images/work_privid.png",
     },
     {
-      badge: "E-commerce",
-      title: "ShopHub Platform",
-      desc: "An advanced e-commerce platform with AI-powered recommendations, secure payments, and streamlined order management.",
+      badge: "dApps & Protocols",
+      title: "Aether Protocol",
+      desc: "A protocol stack for decentralized applications, spanning permissioned networks and public-ready dApp tooling.",
       metrics: [
-        { label: "More Conversions", val: "35%" },
-        { label: "Higher AOV", val: "25%" },
-        { label: "Orders Processed", val: "200K+" },
+        { label: "Faster Finality", val: "35%" },
+        { label: "Lower Overhead", val: "25%" },
+        { label: "dApps Live", val: "200+" },
       ],
-      image: "/images/shophub_platform.png",
+      image: "/images/work_aether.png",
     },
   ];
 

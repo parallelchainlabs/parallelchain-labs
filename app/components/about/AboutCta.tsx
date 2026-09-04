@@ -11,12 +11,14 @@ import {
   ShieldCheck,
   ArrowRight,
 } from "lucide-react";
+import { useLanguage } from "../LanguageProvider";
 
 interface AboutCtaProps {
   onOpenConsultation?: () => void;
 }
 
 export default function AboutCta({ onOpenConsultation }: AboutCtaProps) {
+  const { t } = useLanguage();
   return (
     <>
       {/* REMOTE CULTURE SECTION */}
@@ -26,24 +28,22 @@ export default function AboutCta({ onOpenConsultation }: AboutCtaProps) {
             {/* Left Column Text */}
             <div className="lg:col-span-5 space-y-6">
               <span className="text-[#2CCFD3] text-xs font-semibold tracking-wider uppercase font-heading">
-                REMOTE CULTURE
+                {t.about.cultureEyebrow}
               </span>
               <h2 className="text-3xl sm:text-4xl font-extrabold font-heading text-white">
-                Remote-First.
+                {t.about.cultureTitle1}
                 <br />
-                People-First.
+                {t.about.cultureTitle2}
               </h2>
               <p className="text-sm text-slate-300 leading-relaxed">
-                We believe great work happens when people feel trusted,
-                supported, and empowered to do their best work—wherever they
-                are.
+                {t.about.cultureDesc}
               </p>
               <div className="pt-2">
                 <Link
                   href="/about#team"
                   className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#0E7C86] hover:bg-[#2CCFD3] hover:text-[#0B1623] text-white font-bold text-xs transition-all shadow-lg"
                 >
-                  <span>Life at JitSeeTec</span>
+                  <span>{t.about.lifeAt}</span>
                   <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
@@ -57,10 +57,10 @@ export default function AboutCta({ onOpenConsultation }: AboutCtaProps) {
                 </div>
                 <div>
                   <div className="text-xs font-bold text-white">
-                    Work From Anywhere
+                    {t.about.c1}
                   </div>
                   <div className="text-[10px] text-slate-400">
-                    Flexibility across timezones
+                    {t.about.c1d}
                   </div>
                 </div>
               </div>
@@ -71,10 +71,10 @@ export default function AboutCta({ onOpenConsultation }: AboutCtaProps) {
                 </div>
                 <div>
                   <div className="text-xs font-bold text-white">
-                    Strong Collaboration
+                    {t.about.c2}
                   </div>
                   <div className="text-[10px] text-slate-400">
-                    Connected & aligned
+                    {t.about.c2d}
                   </div>
                 </div>
               </div>
@@ -85,10 +85,10 @@ export default function AboutCta({ onOpenConsultation }: AboutCtaProps) {
                 </div>
                 <div>
                   <div className="text-xs font-bold text-white">
-                    Flexible Hours
+                    {t.about.c3}
                   </div>
                   <div className="text-[10px] text-slate-400">
-                    Focus on outcomes
+                    {t.about.c3d}
                   </div>
                 </div>
               </div>
@@ -99,10 +99,10 @@ export default function AboutCta({ onOpenConsultation }: AboutCtaProps) {
                 </div>
                 <div>
                   <div className="text-xs font-bold text-white">
-                    Wellness First
+                    {t.about.c4}
                   </div>
                   <div className="text-[10px] text-slate-400">
-                    Mental health & balance
+                    {t.about.c4d}
                   </div>
                 </div>
               </div>
@@ -113,10 +113,10 @@ export default function AboutCta({ onOpenConsultation }: AboutCtaProps) {
                 </div>
                 <div>
                   <div className="text-xs font-bold text-white">
-                    Learning Culture
+                    {t.about.c5}
                   </div>
                   <div className="text-[10px] text-slate-400">
-                    Continuous growth & skills
+                    {t.about.c5d}
                   </div>
                 </div>
               </div>
@@ -127,10 +127,10 @@ export default function AboutCta({ onOpenConsultation }: AboutCtaProps) {
                 </div>
                 <div>
                   <div className="text-xs font-bold text-white">
-                    Open Communication
+                    {t.about.c6}
                   </div>
                   <div className="text-[10px] text-slate-400">
-                    Transparency & feedback
+                    {t.about.c6d}
                   </div>
                 </div>
               </div>
@@ -145,19 +145,18 @@ export default function AboutCta({ onOpenConsultation }: AboutCtaProps) {
           <div className="bg-white border border-slate-200 rounded-3xl p-8 sm:p-12 flex flex-col md:flex-row items-center justify-between gap-8 shadow-sm">
             <div className="space-y-2 text-center md:text-left">
               <h2 className="text-2xl sm:text-3xl font-extrabold font-heading text-[#0B1623]">
-                Join Our Mission to Build the Future
+                {t.about.hireTitle}
               </h2>
               <p className="text-xs sm:text-sm text-slate-600 max-w-xl">
-                We&apos;re always looking for passionate, curious, and
-                collaborative people to join our growing team.
+                {t.about.hireDesc}
               </p>
             </div>
 
             <a
-              href="mailto:hello@jitseetec.com?subject=Career%20Inquiry%20-%20JitSeeTec"
+              href="mailto:info@parallelchain-labs.io?subject=Career%20Inquiry%20-%20ParallelChain%20Labs"
               className="shrink-0 px-8 py-3.5 bg-[#0E7C86] hover:bg-[#0B6871] text-white font-bold text-xs rounded-xl transition-all shadow-md flex items-center gap-2"
             >
-              <span>View Open Positions</span>
+              <span>{t.about.hireCta}</span>
               <ArrowRight className="w-4 h-4" />
             </a>
           </div>

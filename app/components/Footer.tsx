@@ -12,18 +12,25 @@ import {
   Send,
   CheckCircle2,
 } from "lucide-react";
+import { FaTelegram } from "react-icons/fa";
+import { useLanguage } from "./LanguageProvider";
+import { openLabMailto } from "../lib/mailto";
 
 export default function Footer() {
+  const { t } = useLanguage();
   const [email, setEmail] = useState("");
   const [subscribed, setSubscribed] = useState(false);
 
   const handleSubscribe = (e: React.FormEvent) => {
     e.preventDefault();
-    if (email) {
-      setSubscribed(true);
-      setEmail("");
-      setTimeout(() => setSubscribed(false), 4000);
-    }
+    if (!email) return;
+    openLabMailto(
+      "Updates request — ParallelChain Labs",
+      `Please add this address to lab updates:\n\n${email}`,
+    );
+    setSubscribed(true);
+    setEmail("");
+    setTimeout(() => setSubscribed(false), 6000);
   };
 
   return (
@@ -33,25 +40,24 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 pb-12 border-b border-slate-800/60">
           {/* Brand Info (Col span 4) */}
           <div className="lg:col-span-4 space-y-5 lg:pr-6 lg:border-r border-slate-800/60">
-            <Link href="/" className="flex items-center gap-0">
+            <Link href="/" className="flex items-center gap-2.5">
               <Image
-                src="/logo/logo.png"
-                alt="JitSeeTec Logo"
-                width={48}
-                height={48}
-                className="w-18 h-18 object-contain"
+                src="/logo/parallelchain-lab.png"
+                alt="ParallelChain Lab"
+                width={40}
+                height={40}
+                className="w-10 h-10 rounded-lg object-contain bg-white"
               />
-              <span className="text-2xl font-bold font-heading text-white">
-                JitSeeTec<span className="text-[#2CCFD3]">.</span>
+              <span className="text-xl font-bold font-heading text-white">
+                ParallelChain<span className="text-[#2CCFD3]"> Labs</span>
               </span>
             </Link>
             <p className="text-xs text-slate-400 max-w-sm leading-relaxed">
-              We design, build and scale digital solutions that help startups,
-              SMEs and enterprises transform ideas into impactful products.
+              {t.footer.blurb}
             </p>
             <div className="flex items-center gap-3 pt-2">
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/company/parallelchain-lab/"
                 target="_blank"
                 rel="noreferrer"
                 className="w-9 h-9 rounded-full bg-slate-800/80 border border-slate-700/60 hover:border-[#2CCFD3] hover:bg-[#0E7C86] text-slate-300 hover:text-white flex items-center justify-center transition-colors"
@@ -62,7 +68,7 @@ export default function Footer() {
                 </svg>
               </a>
               <a
-                href="https://github.com"
+                href="https://github.com/parallelchain-io"
                 target="_blank"
                 rel="noreferrer"
                 className="w-9 h-9 rounded-full bg-slate-800/80 border border-slate-700/60 hover:border-[#2CCFD3] hover:bg-[#0E7C86] text-slate-300 hover:text-white flex items-center justify-center transition-colors"
@@ -73,36 +79,25 @@ export default function Footer() {
                 </svg>
               </a>
               <a
-                href="https://twitter.com"
+                href="https://x.com/ParallelChainLB"
                 target="_blank"
                 rel="noreferrer"
                 className="w-9 h-9 rounded-full bg-slate-800/80 border border-slate-700/60 hover:border-[#2CCFD3] hover:bg-[#0E7C86] text-slate-300 hover:text-white flex items-center justify-center transition-colors"
-                aria-label="Twitter"
+                aria-label="X"
               >
                 <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
                   <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-                </svg>
-              </a>
-              <a
-                href="https://facebook.com"
-                target="_blank"
-                rel="noreferrer"
-                className="w-9 h-9 rounded-full bg-slate-800/80 border border-slate-700/60 hover:border-[#2CCFD3] hover:bg-[#0E7C86] text-slate-300 hover:text-white flex items-center justify-center transition-colors"
-                aria-label="Facebook"
-              >
-                <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
-                  <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H7.5v-3H10V9.5C10 7.01 11.49 5.65 13.75 5.65c1.08 0 2.22.19 2.22.19v2.44h-1.25c-1.23 0-1.62.77-1.62 1.56V12h2.77l-.44 3h-2.33v6.8c4.56-.93 8-4.96 8-9.8z" />
                 </svg>
               </a>
             </div>
           </div>
 
           {/* Nav Links & Contact Info (Col span 8) */}
-          <div className="lg:col-span-8 grid grid-cols-2 sm:grid-cols-5 gap-6 pl-0 lg:pl-4">
+          <div className="lg:col-span-8 grid grid-cols-2 sm:grid-cols-4 gap-6 pl-0 lg:pl-4">
             {/* Company */}
             <div>
               <h3 className="text-xs font-bold text-[#2CCFD3] tracking-wider uppercase mb-4 font-heading border-b border-[#2CCFD3]/30 pb-1.5 inline-block">
-                Company
+                {t.footer.company}
               </h3>
               <ul className="space-y-2.5 text-xs font-medium">
                 <li>
@@ -110,7 +105,7 @@ export default function Footer() {
                     href="/about"
                     className="hover:text-[#2CCFD3] transition-colors"
                   >
-                    About
+                    {t.footer.about}
                   </Link>
                 </li>
                 <li>
@@ -118,23 +113,23 @@ export default function Footer() {
                     href="/about#team"
                     className="hover:text-[#2CCFD3] transition-colors"
                   >
-                    Team
+                    {t.footer.team}
                   </Link>
+                </li>
+                <li>
+                  <a
+                    href="mailto:info@parallelchain-labs.io?subject=Career%20inquiry%20-%20ParallelChain%20Labs"
+                    className="hover:text-[#2CCFD3] transition-colors"
+                  >
+                    {t.footer.careers}
+                  </a>
                 </li>
                 <li>
                   <Link
                     href="/contact"
                     className="hover:text-[#2CCFD3] transition-colors"
                   >
-                    Careers
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/contact"
-                    className="hover:text-[#2CCFD3] transition-colors"
-                  >
-                    Contact
+                    {t.footer.contact}
                   </Link>
                 </li>
               </ul>
@@ -143,80 +138,39 @@ export default function Footer() {
             {/* Services */}
             <div>
               <h3 className="text-xs font-bold text-[#2CCFD3] tracking-wider uppercase mb-4 font-heading border-b border-[#2CCFD3]/30 pb-1.5 inline-block">
-                Services
+                {t.footer.services}
               </h3>
               <ul className="space-y-2.5 text-xs font-medium">
                 <li>
                   <Link
-                    href="/services#web-dev"
+                    href="/services#dapps-protocols"
                     className="hover:text-[#2CCFD3] transition-colors"
                   >
-                    Web Development
+                    {t.nav.dapps}
                   </Link>
                 </li>
                 <li>
                   <Link
-                    href="/services#mobile-dev"
+                    href="/services#digital-identity"
                     className="hover:text-[#2CCFD3] transition-colors"
                   >
-                    Mobile Apps
+                    {t.nav.identity}
                   </Link>
                 </li>
                 <li>
                   <Link
-                    href="/services#uiux-design"
+                    href="/services#defi"
                     className="hover:text-[#2CCFD3] transition-colors"
                   >
-                    UI/UX Design
+                    {t.nav.defi}
                   </Link>
                 </li>
                 <li>
                   <Link
-                    href="/services#api-dev"
+                    href="/services#ai-infrastructure"
                     className="hover:text-[#2CCFD3] transition-colors"
                   >
-                    API Development
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/services#custom-software"
-                    className="hover:text-[#2CCFD3] transition-colors"
-                  >
-                    Custom Software
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            {/* Resources */}
-            <div>
-              <h3 className="text-xs font-bold text-[#2CCFD3] tracking-wider uppercase mb-4 font-heading border-b border-[#2CCFD3]/30 pb-1.5 inline-block">
-                Resources
-              </h3>
-              <ul className="space-y-2.5 text-xs font-medium">
-                <li>
-                  <Link
-                    href="/blog"
-                    className="hover:text-[#2CCFD3] transition-colors"
-                  >
-                    Blog
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/case-studies"
-                    className="hover:text-[#2CCFD3] transition-colors"
-                  >
-                    Case Studies
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/resources#faqs"
-                    className="hover:text-[#2CCFD3] transition-colors"
-                  >
-                    FAQ
+                    {t.nav.ai}
                   </Link>
                 </li>
               </ul>
@@ -225,23 +179,23 @@ export default function Footer() {
             {/* Legal */}
             <div>
               <h3 className="text-xs font-bold text-[#2CCFD3] tracking-wider uppercase mb-4 font-heading border-b border-[#2CCFD3]/30 pb-1.5 inline-block">
-                Legal
+                {t.footer.legal}
               </h3>
               <ul className="space-y-2.5 text-xs font-medium">
                 <li>
                   <Link
-                    href="/contact"
+                    href="/privacy"
                     className="hover:text-[#2CCFD3] transition-colors"
                   >
-                    Privacy Policy
+                    {t.footer.privacy}
                   </Link>
                 </li>
                 <li>
                   <Link
-                    href="/contact"
+                    href="/terms"
                     className="hover:text-[#2CCFD3] transition-colors"
                   >
-                    Terms & Conditions
+                    {t.footer.terms}
                   </Link>
                 </li>
               </ul>
@@ -250,32 +204,44 @@ export default function Footer() {
             {/* Get in Touch */}
             <div className="col-span-2 sm:col-span-1 border-l border-slate-800/80 pl-4">
               <h3 className="text-xs font-bold text-[#2CCFD3] tracking-wider uppercase mb-4 font-heading border-b border-[#2CCFD3]/30 pb-1.5 inline-block">
-                Get in Touch
+                {t.footer.getInTouch}
               </h3>
               <ul className="space-y-3 text-xs font-medium">
                 <li className="flex items-start gap-2.5 text-slate-400">
                   <MapPin className="w-4 h-4 text-[#2CCFD3] shrink-0 mt-0.5" />
                   <span>
-                    Near Anandit Church, Imadol, Lalitpur, Bagmati Province,
-                    Nepal
+                    100 Tras Street, #16-01, 100 AM
+                    <br />
+                    Singapore 079027
                   </span>
                 </li>
                 <li className="flex items-center gap-2.5 text-slate-400">
                   <Phone className="w-4 h-4 text-[#2CCFD3] shrink-0" />
                   <a
-                    href="tel:+9779811195091"
+                    href="tel:+85223256667"
                     className="hover:text-white transition-colors"
                   >
-                    +977 98111 95091
+                    +852 2325 6667
                   </a>
                 </li>
                 <li className="flex items-center gap-2.5 text-slate-400">
                   <Mail className="w-4 h-4 text-[#2CCFD3] shrink-0" />
                   <a
-                    href="mailto:hello@jitseetec.com"
+                    href="mailto:info@parallelchain-labs.io"
                     className="hover:text-white transition-colors"
                   >
-                    hello@jitseetec.com
+                    info@parallelchain-labs.io
+                  </a>
+                </li>
+                <li className="flex items-center gap-2.5 text-slate-400">
+                  <FaTelegram className="w-4 h-4 text-[#2CCFD3] shrink-0" />
+                  <a
+                    href="https://t.me/InfoParallelChainLabs"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="hover:text-white transition-colors"
+                  >
+                    @InfoParallelChainLabs
                   </a>
                 </li>
               </ul>
@@ -291,11 +257,10 @@ export default function Footer() {
             </div>
             <div>
               <h4 className="text-lg font-bold font-heading text-white">
-                Stay in the Loop
+                {t.footer.stayLoop}
               </h4>
               <p className="text-xs text-slate-400 mt-0.5">
-                Get the latest insights, updates and tech stories delivered
-                straight to your inbox.
+                {t.footer.stayLoopDesc}
               </p>
             </div>
           </div>
@@ -309,7 +274,7 @@ export default function Footer() {
                 <input
                   type="email"
                   required
-                  placeholder="Enter your email address"
+                  placeholder={t.footer.emailPlaceholder}
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   className="w-full sm:w-72 px-4 py-3 bg-[#162533] border border-slate-700/80 rounded-xl text-xs text-white placeholder-slate-400 focus:outline-none focus:border-[#2CCFD3] transition-colors"
@@ -318,14 +283,14 @@ export default function Footer() {
                   type="submit"
                   className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[#0E7C86] hover:bg-[#2CCFD3] hover:text-[#0B1623] text-white font-bold text-xs transition-all shadow-md shrink-0"
                 >
-                  <span>Subscribe</span>
+                  <span>{t.footer.subscribe}</span>
                   <Send className="w-3.5 h-3.5" />
                 </button>
               </>
             ) : (
               <div className="flex items-center gap-2 text-xs font-bold text-[#16A34A] bg-[#16A34A]/10 border border-[#16A34A]/30 px-5 py-3 rounded-xl">
                 <CheckCircle2 className="w-4 h-4" />
-                <span>Thank you for subscribing!</span>
+                <span>{t.footer.subscribed}</span>
               </div>
             )}
           </form>
@@ -333,16 +298,16 @@ export default function Footer() {
 
         {/* Bottom Copyright Bar */}
         <div className="pt-6 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-400 border-t border-slate-800/40">
-          <p>© 2026 JitSeeTec. Pvt. Ltd. All rights reserved.</p>
+          <p>{t.footer.copyright}</p>
 
           <div className="flex items-center gap-2 text-slate-400">
             <Heart className="w-3.5 h-3.5 text-[#2CCFD3] fill-[#2CCFD3] inline" />
-            <span>Built with passion for great digital experiences.</span>
+            <span>{t.footer.builtWith}</span>
           </div>
 
           <div className="flex items-center gap-2 text-slate-400">
             <ShieldCheck className="w-4 h-4 text-[#2CCFD3]" />
-            <span>Your data is safe with us.</span>
+            <span>{t.footer.dataSafe}</span>
           </div>
         </div>
       </div>

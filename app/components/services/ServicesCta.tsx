@@ -2,20 +2,20 @@
 
 import React from "react";
 import { Send, ArrowRight } from "lucide-react";
+import { useLanguage } from "../LanguageProvider";
 
 interface ServicesCtaProps {
   onOpenConsultation: () => void;
 }
 
 export default function ServicesCta({ onOpenConsultation }: ServicesCtaProps) {
+  const { t } = useLanguage();
   const logos = [
-    "NOVATECH",
-    "MEDIFLOW",
-    "EduSphere",
-    "Finova",
-    "Travelo",
-    "HealthPlus",
-    "Payrix",
+    "Enterprise",
+    "Mainnet",
+    "BINGO",
+    "ParallelWallet",
+    "IPC",
   ];
 
   return (
@@ -30,11 +30,10 @@ export default function ServicesCta({ onOpenConsultation }: ServicesCtaProps) {
               </div>
               <div className="space-y-1 text-left">
                 <h2 className="text-2xl sm:text-3xl font-extrabold font-heading text-white">
-                  Ready to Build Something Great?
+                  {t.services.ctaTitle}
                 </h2>
                 <p className="text-xs sm:text-sm text-slate-300">
-                  Let&apos;s discuss how we can help you turn your ideas into
-                  impactful digital solutions.
+                  {t.services.ctaDesc}
                 </p>
               </div>
             </div>
@@ -43,7 +42,7 @@ export default function ServicesCta({ onOpenConsultation }: ServicesCtaProps) {
               onClick={onOpenConsultation}
               className="z-10 shrink-0 px-8 py-3.5 bg-white hover:bg-slate-100 text-slate-900 font-bold text-xs rounded-xl transition-all shadow-xl flex items-center gap-2"
             >
-              <span>Book a Free Consultation</span>
+              <span>{t.services.bookFree}</span>
               <ArrowRight className="w-4 h-4" />
             </button>
           </div>
@@ -54,7 +53,7 @@ export default function ServicesCta({ onOpenConsultation }: ServicesCtaProps) {
       <div className="py-12 bg-white text-slate-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-center text-xs font-semibold text-slate-400 uppercase tracking-wider mb-6">
-            TRUSTED BY BUSINESSES WORLDWIDE
+            {t.home.trusted}
           </p>
           <div className="flex flex-wrap items-center justify-center gap-8 lg:gap-14 opacity-80">
             {logos.map((logo, idx) => (

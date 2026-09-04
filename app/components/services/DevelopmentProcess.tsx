@@ -3,51 +3,23 @@
 import React from "react";
 import {
   Search,
-  FileText,
-  Edit3,
-  Code2,
+  GitBranch,
+  Blocks,
+  ShieldCheck,
   Rocket,
-  Headphones,
+  RefreshCw,
 } from "lucide-react";
+import { useLanguage } from "../LanguageProvider";
 
 export default function DevelopmentProcess() {
+  const { t } = useLanguage();
   const steps = [
-    {
-      step: "01",
-      title: "Discover",
-      desc: "We understand your business, goals and challenges.",
-      icon: Search,
-    },
-    {
-      step: "02",
-      title: "Plan",
-      desc: "We define the strategy, roadmap and technical approach.",
-      icon: FileText,
-    },
-    {
-      step: "03",
-      title: "Design",
-      desc: "We create intuitive designs that users love.",
-      icon: Edit3,
-    },
-    {
-      step: "04",
-      title: "Develop",
-      desc: "We build robust, scalable and secure solutions.",
-      icon: Code2,
-    },
-    {
-      step: "05",
-      title: "Deliver",
-      desc: "We test, deploy and deliver great software on time.",
-      icon: Rocket,
-    },
-    {
-      step: "06",
-      title: "Support",
-      desc: "We provide ongoing support and continuous improvement.",
-      icon: Headphones,
-    },
+    { step: "01", title: t.services.p1Title, desc: t.services.p1Desc, icon: Search },
+    { step: "02", title: t.services.p2Title, desc: t.services.p2Desc, icon: GitBranch },
+    { step: "03", title: t.services.p3Title, desc: t.services.p3Desc, icon: Blocks },
+    { step: "04", title: t.services.p4Title, desc: t.services.p4Desc, icon: ShieldCheck },
+    { step: "05", title: t.services.p5Title, desc: t.services.p5Desc, icon: Rocket },
+    { step: "06", title: t.services.p6Title, desc: t.services.p6Desc, icon: RefreshCw },
   ];
 
   return (
@@ -55,12 +27,12 @@ export default function DevelopmentProcess() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-16 text-center sm:text-left">
           <span className="text-[#0E7C86] text-xs font-bold tracking-wider uppercase font-heading">
-            OUR PROCESS
+            {t.services.processEyebrow}
           </span>
           <h2 className="text-3xl sm:text-4xl font-extrabold font-heading text-[#0B1623] mt-2">
-            A Collaborative Process
+            {t.services.processTitle1}
             <br />
-            That Delivers Results
+            {t.services.processTitle2}
           </h2>
         </div>
 

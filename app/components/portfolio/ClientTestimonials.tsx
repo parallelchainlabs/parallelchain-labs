@@ -2,31 +2,30 @@
 
 import React, { useState } from "react";
 import { Quote } from "lucide-react";
+import { useLanguage } from "../LanguageProvider";
 
 export default function ClientTestimonials() {
+  const { t } = useLanguage();
   const [activeTestimonial, setActiveTestimonial] = useState(0);
 
   const testimonials = [
     {
-      quote:
-        "JitSeeTec delivered an exceptional product that exceeded our expectations. Their team was professional, responsive, and truly understood our vision.",
-      author: "Rohit Sharma",
-      role: "CEO, Finova",
-      avatar: "RS",
+      quote: t.home.q1,
+      author: t.home.proj1Title,
+      role: t.home.q1Role,
+      avatar: "PE",
     },
     {
-      quote:
-        "The communication and project management were outstanding. We're impressed with their technical expertise and attention to detail.",
-      author: "Priya Nair",
-      role: "Product Manager, MediFlow",
-      avatar: "PN",
+      quote: t.home.q2,
+      author: t.home.proj2Title,
+      role: t.home.q2Role,
+      avatar: "BI",
     },
     {
-      quote:
-        "Our e-commerce platform saw a 40% increase in conversions after launch. Great team, great results!",
-      author: "James Carter",
-      role: "Founder, ShopHub",
-      avatar: "JC",
+      quote: t.home.q3,
+      author: "IPC",
+      role: t.home.q3Role,
+      avatar: "IC",
     },
   ];
 
@@ -39,10 +38,10 @@ export default function ClientTestimonials() {
           <div className="relative z-10 space-y-8">
             <div>
               <span className="text-[#2CCFD3] text-xs font-semibold tracking-wider uppercase font-heading">
-                CLIENT SUCCESS STORIES
+                {t.home.clientsSay}
               </span>
               <h2 className="text-3xl font-bold font-heading text-white mt-2">
-                What Our Clients Say About Us
+                {t.portfolio.clientsTitle}
               </h2>
             </div>
 

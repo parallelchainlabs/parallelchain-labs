@@ -141,7 +141,7 @@ export default function BlogSidebar() {
           {categories.map((cat, idx) => (
             <Link
               key={idx}
-              href="/resources#blog"
+              href="/blog"
               className="flex items-center justify-between p-2 rounded-xl hover:bg-slate-50 text-slate-700 hover:text-[#0E7C86] font-medium transition-colors"
             >
               <span>{cat.name}</span>
@@ -203,7 +203,7 @@ export default function BlogSidebar() {
           {tags.map((tag, idx) => (
             <Link
               key={idx}
-              href="/resources#blog"
+              href="/blog"
               className="px-3 py-1.5 rounded-xl bg-[#F7F9FB] hover:bg-[#0E7C86] text-slate-600 hover:text-white border border-slate-200 text-xs font-medium transition-colors"
             >
               {tag}

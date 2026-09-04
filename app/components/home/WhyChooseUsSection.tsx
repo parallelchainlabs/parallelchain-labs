@@ -1,29 +1,31 @@
 "use client";
 
 import React from "react";
-import { Users, ShieldCheck, Zap, Headphones } from "lucide-react";
+import { Network, ShieldCheck, Fingerprint, BrainCircuit } from "lucide-react";
+import { useLanguage } from "../LanguageProvider";
 
 export default function WhyChooseUsSection() {
+  const { t } = useLanguage();
   const pillars = [
     {
-      title: "Client-Centric Approach",
-      desc: "We listen, collaborate and align our solutions with your business goals.",
-      icon: Users,
+      title: t.home.pillar1Title,
+      desc: t.home.pillar1Desc,
+      icon: Network,
     },
     {
-      title: "Transparent Process",
-      desc: "We follow clear communication and transparent processes at every step.",
+      title: t.home.pillar2Title,
+      desc: t.home.pillar2Desc,
+      icon: Fingerprint,
+    },
+    {
+      title: t.home.pillar3Title,
+      desc: t.home.pillar3Desc,
       icon: ShieldCheck,
     },
     {
-      title: "Agile & Scalable",
-      desc: "Our agile approach ensures flexibility, scalability and faster time-to-market.",
-      icon: Zap,
-    },
-    {
-      title: "Long-Term Partnership",
-      desc: "We build lasting relationships and support your growth beyond delivery.",
-      icon: Headphones,
+      title: t.home.pillar4Title,
+      desc: t.home.pillar4Desc,
+      icon: BrainCircuit,
     },
   ];
 
@@ -32,14 +34,13 @@ export default function WhyChooseUsSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto mb-16">
           <span className="text-[#0E7C86] text-xs font-bold tracking-wider uppercase font-heading">
-            WHY CHOOSE US
+            {t.home.why}
           </span>
           <h2 className="text-3xl sm:text-4xl font-extrabold font-heading text-[#0B1623] mt-2">
-            Your Success Is Our Commitment
+            {t.home.whyTitle}
           </h2>
           <p className="text-slate-600 text-sm mt-3">
-            We combine technology, creativity and strategy to deliver solutions
-            that help you stay ahead in a competitive digital landscape.
+            {t.home.whyDesc}
           </p>
         </div>
 

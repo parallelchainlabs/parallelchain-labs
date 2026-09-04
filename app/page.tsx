@@ -38,7 +38,7 @@ export default function Home() {
         {/* Why Choose Us */}
         <WhyChooseUsSection />
 
-        {/* Testimonials & Latest Insights */}
+        {/* Testimonials */}
         <LatestArticlesSection />
 
         {/* Conversion Action CTA */}

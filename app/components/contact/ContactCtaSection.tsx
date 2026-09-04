@@ -2,6 +2,7 @@
 
 import React from "react";
 import { Send, ArrowRight } from "lucide-react";
+import { useLanguage } from "../LanguageProvider";
 
 interface ContactCtaSectionProps {
   onOpenConsultation: () => void;
@@ -10,6 +11,7 @@ interface ContactCtaSectionProps {
 export default function ContactCtaSection({
   onOpenConsultation,
 }: ContactCtaSectionProps) {
+  const { t } = useLanguage();
   return (
     <section className="py-16 bg-white text-slate-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -20,10 +22,10 @@ export default function ContactCtaSection({
             </div>
             <div className="space-y-1 text-left">
               <h2 className="text-2xl sm:text-3xl font-extrabold font-heading text-white">
-                Ready to Start Your Project?
+                {t.contact.ctaTitle}
               </h2>
               <p className="text-xs sm:text-sm text-slate-300 max-w-xl">
-                Let&apos;s turn your ideas into powerful digital solutions.
+                {t.contact.ctaDesc}
               </p>
             </div>
           </div>
@@ -32,7 +34,7 @@ export default function ContactCtaSection({
             onClick={onOpenConsultation}
             className="z-10 shrink-0 px-8 py-3.5 bg-[#2CCFD3] hover:bg-[#0E7C86] hover:text-white text-[#0B1623] font-bold text-xs rounded-xl transition-all shadow-xl flex items-center gap-2"
           >
-            <span>Book a Free Consultation</span>
+            <span>{t.contact.bookFree}</span>
             <ArrowRight className="w-4 h-4" />
           </button>
         </div>

@@ -3,38 +3,40 @@
 import React from "react";
 import Link from "next/link";
 import {
-  Code2,
-  Smartphone,
-  Layout,
-  Terminal,
+  Blocks,
+  Fingerprint,
+  Landmark,
+  BrainCircuit,
   ArrowRight,
 } from "lucide-react";
+import { useLanguage } from "../LanguageProvider";
 
 export default function WhatWeDoSection() {
+  const { t } = useLanguage();
   const services = [
     {
-      icon: Code2,
-      title: "Web Development",
-      desc: "We build fast, responsive and scalable web applications using modern technologies.",
-      link: "/services#web-dev",
+      icon: Blocks,
+      title: t.home.dappsTitle,
+      desc: t.home.dappsDesc,
+      link: "/services#dapps-protocols",
     },
     {
-      icon: Smartphone,
-      title: "Mobile App Development",
-      desc: "Native and cross-platform mobile apps that deliver seamless user experiences.",
-      link: "/services#mobile-dev",
+      icon: Fingerprint,
+      title: t.home.identityTitle,
+      desc: t.home.identityDesc,
+      link: "/services#digital-identity",
     },
     {
-      icon: Layout,
-      title: "UI/UX Design",
-      desc: "User-centered designs that are intuitive, engaging and aligned with your brand.",
-      link: "/services#uiux-design",
+      icon: Landmark,
+      title: t.home.defiTitle,
+      desc: t.home.defiDesc,
+      link: "/services#defi",
     },
     {
-      icon: Terminal,
-      title: "Custom Software",
-      desc: "Robust software solutions tailored to your unique business requirements.",
-      link: "/services#custom-software",
+      icon: BrainCircuit,
+      title: t.home.aiTitle,
+      desc: t.home.aiDesc,
+      link: "/services#ai-infrastructure",
     },
   ];
 
@@ -44,14 +46,13 @@ export default function WhatWeDoSection() {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
           <div>
             <span className="text-[#0E7C86] text-xs font-bold tracking-wider uppercase font-heading">
-              WHAT WE DO
+              {t.home.whatWeDo}
             </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold font-heading text-[#0B1623] mt-2">
-              End-to-End Digital Solutions
+              {t.home.whatWeDoTitle}
             </h2>
             <p className="text-slate-600 text-sm max-w-xl mt-3">
-              From ideation to deployment, we deliver tailored solutions that
-              drive efficiency, growth and long-term success.
+              {t.home.whatWeDoDesc}
             </p>
           </div>
 
@@ -59,13 +60,12 @@ export default function WhatWeDoSection() {
             href="/services"
             className="mt-4 md:mt-0 inline-flex items-center gap-2 text-xs font-bold text-[#0E7C86] hover:text-[#0B6871] transition-colors group"
           >
-            <span>View All Services</span>
+            <span>{t.home.viewAllServices}</span>
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </Link>
         </div>
 
-        {/* 5 Equal Cards Row Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map((service, idx) => {
             const IconComp = service.icon;
             return (
@@ -89,7 +89,7 @@ export default function WhatWeDoSection() {
                   href={service.link}
                   className="inline-flex items-center gap-1.5 text-xs font-bold text-[#0E7C86] hover:underline transition-colors"
                 >
-                  <span>Learn More</span>
+                  <span>{t.home.learnMore}</span>
                   <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </div>

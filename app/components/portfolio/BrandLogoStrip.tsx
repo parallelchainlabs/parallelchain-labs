@@ -1,23 +1,23 @@
 "use client";
 
 import React from "react";
+import { useLanguage } from "../LanguageProvider";
 
 export default function BrandLogoStrip() {
+  const { t } = useLanguage();
   const logos = [
-    "NOVATECH",
-    "MEDIFLOW",
-    "EduSphere",
-    "Finova",
-    "Travelo",
-    "HealthPlus",
-    "Payrix",
+    "Enterprise",
+    "Mainnet",
+    "BINGO",
+    "ParallelWallet",
+    "IPC",
   ];
 
   return (
     <section className="py-12 bg-white text-slate-900 border-t border-slate-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <p className="text-center text-xs font-semibold text-slate-400 uppercase tracking-wider mb-6">
-          TRUSTED BY BUSINESSES WORLDWIDE
+          {t.home.trusted}
         </p>
         <div className="flex flex-wrap items-center justify-center gap-8 lg:gap-14 opacity-80">
           {logos.map((logo, idx) => (

@@ -10,7 +10,7 @@ export default function PostNavigation() {
     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 my-10 border-t border-b border-slate-200 py-6">
       {/* Previous Post */}
       <Link
-        href="/resources#blog"
+        href="/blog"
         className="group p-4 bg-[#F7F9FB] border border-slate-200 rounded-2xl flex items-center gap-4 hover:border-[#0E7C86] transition-all shadow-sm"
       >
         <div className="relative w-14 h-14 rounded-xl overflow-hidden shrink-0 bg-slate-200">
@@ -35,7 +35,7 @@ export default function PostNavigation() {
 
       {/* Next Post */}
       <Link
-        href="/resources#blog"
+        href="/blog"
         className="group p-4 bg-[#F7F9FB] border border-slate-200 rounded-2xl flex items-center justify-between gap-4 hover:border-[#0E7C86] transition-all shadow-sm text-right"
       >
         <div className="space-y-1 text-right flex-1">

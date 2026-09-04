@@ -1,35 +1,16 @@
 "use client";
 
 import React from "react";
-import { Users, ShieldCheck, Award, Clock, Zap } from "lucide-react";
+import { Network, ShieldCheck, Fingerprint, BrainCircuit } from "lucide-react";
+import { useLanguage } from "../LanguageProvider";
 
 export default function WhyChooseUsServices() {
+  const { t } = useLanguage();
   const pillars = [
-    {
-      title: "Experienced Team",
-      desc: "Skilled professionals with years of experience in modern technologies.",
-      icon: Users,
-    },
-    {
-      title: "Agile & Transparent",
-      desc: "We work in agile sprints and keep you updated at every step.",
-      icon: ShieldCheck,
-    },
-    {
-      title: "Quality First",
-      desc: "We follow best practices to deliver reliable and high-quality solutions.",
-      icon: Award,
-    },
-    {
-      title: "On-Time Delivery",
-      desc: "We respect deadlines and deliver your projects on time, every time.",
-      icon: Clock,
-    },
-    {
-      title: "Long-Term Partner",
-      desc: "We build lasting relationships and support your growth beyond delivery.",
-      icon: Zap,
-    },
+    { title: t.services.wp1Title, desc: t.services.wp1Desc, icon: Network },
+    { title: t.services.wp2Title, desc: t.services.wp2Desc, icon: ShieldCheck },
+    { title: t.services.wp3Title, desc: t.services.wp3Desc, icon: Fingerprint },
+    { title: t.services.wp4Title, desc: t.services.wp4Desc, icon: BrainCircuit },
   ];
 
   return (
@@ -37,14 +18,14 @@ export default function WhyChooseUsServices() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-12">
           <span className="text-[#0E7C86] text-xs font-bold tracking-wider uppercase font-heading">
-            WHY CHOOSE US
+            {t.services.whyEyebrow}
           </span>
           <h2 className="text-3xl sm:text-4xl font-extrabold font-heading text-[#0B1623] mt-2">
-            Your Success Is Our Commitment
+            {t.services.whyTitle}
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {pillars.map((pillar, i) => {
             const IconComponent = pillar.icon;
             return (

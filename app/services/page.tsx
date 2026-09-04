@@ -9,7 +9,6 @@ import ConsultationModal from "../components/ConsultationModal";
 import ServicesHero from "../components/services/ServicesHero";
 import ServiceCards from "../components/services/ServiceCards";
 import DevelopmentProcess from "../components/services/DevelopmentProcess";
-import LeadershipFounders from "../components/services/LeadershipFounders";
 import WhyChooseUsServices from "../components/services/WhyChooseUsServices";
 import ServicesCta from "../components/services/ServicesCta";
 
@@ -25,14 +24,11 @@ export default function ServicesPage() {
         {/* Services Hero Banner */}
         <ServicesHero onOpenConsultation={() => setConsultationOpen(true)} />
 
-        {/* 6 Service Offering Cards */}
+        {/* Four core capability cards */}
         <ServiceCards onOpenConsultation={() => setConsultationOpen(true)} />
 
-        {/* 6 Step Development Process */}
+        {/* Research-to-production process */}
         <DevelopmentProcess />
-
-        {/* Leadership & Founders */}
-        <LeadershipFounders />
 
         {/* Why Choose Us */}
         <WhyChooseUsServices />

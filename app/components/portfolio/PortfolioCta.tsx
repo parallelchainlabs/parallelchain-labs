@@ -2,6 +2,7 @@
 
 import React from "react";
 import { Send, ArrowRight } from "lucide-react";
+import { useLanguage } from "../LanguageProvider";
 
 interface PortfolioCtaProps {
   onOpenConsultation: () => void;
@@ -10,6 +11,7 @@ interface PortfolioCtaProps {
 export default function PortfolioCta({
   onOpenConsultation,
 }: PortfolioCtaProps) {
+  const { t } = useLanguage();
   return (
     <section className="py-16 bg-white text-slate-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -20,11 +22,10 @@ export default function PortfolioCta({
             </div>
             <div className="space-y-1 text-left">
               <h2 className="text-2xl sm:text-3xl font-extrabold font-heading text-white">
-                Have a Similar Project in Mind?
+                {t.portfolio.ctaTitle}
               </h2>
               <p className="text-xs sm:text-sm text-slate-300">
-                Let&apos;s discuss how we can help you build your next digital
-                success story.
+                {t.portfolio.ctaDesc}
               </p>
             </div>
           </div>
@@ -33,7 +34,7 @@ export default function PortfolioCta({
             onClick={onOpenConsultation}
             className="z-10 shrink-0 px-8 py-3.5 bg-white hover:bg-slate-100 text-slate-900 font-bold text-xs rounded-xl transition-all shadow-xl flex items-center gap-2"
           >
-            <span>Start a Project</span>
+            <span>{t.portfolio.startProject}</span>
             <ArrowRight className="w-4 h-4" />
           </button>
         </div>

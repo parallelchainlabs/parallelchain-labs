@@ -517,7 +517,7 @@ export default function CaseStudyBody() {
           <div className="bg-[#F7F9FB] border border-slate-200 rounded-3xl p-6 sm:p-8 relative">
             <Quote className="w-8 h-8 text-[#0E7C86]/20 absolute top-4 left-4" />
             <blockquote className="text-sm font-medium text-[#0B1623] italic leading-relaxed mb-4 pl-6">
-              &ldquo;JitSeeTec transformed our appointment system completely.
+              &ldquo;ParallelChain Labs transformed our appointment system completely.
               The platform is intuitive, reliable, and has significantly
               improved our operations and patient satisfaction.&rdquo;
             </blockquote>

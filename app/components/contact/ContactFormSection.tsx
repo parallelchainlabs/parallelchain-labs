@@ -11,8 +11,12 @@ import {
   Clock,
   ChevronDown,
 } from "lucide-react";
+import { FaTelegram } from "react-icons/fa";
+import { useLanguage } from "../LanguageProvider";
+import { openLabMailto } from "../../lib/mailto";
 
 export default function ContactFormSection() {
+  const { t } = useLanguage();
   const [submitted, setSubmitted] = useState(false);
   const [form, setForm] = useState({
     fullName: "",
@@ -29,9 +33,23 @@ export default function ContactFormSection() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!form.agreePrivacy) {
-      alert("Please agree to the Privacy Policy to proceed.");
+      alert(t.contact.privacyAlert);
       return;
     }
+    openLabMailto(
+      `Inquiry from ${form.fullName || "website"}`,
+      [
+        `Name: ${form.fullName}`,
+        `Email: ${form.email}`,
+        `Company: ${form.company || "—"}`,
+        `Phone: ${form.phone || "—"}`,
+        `Service: ${form.service || "—"}`,
+        `Engagement: ${form.budget || "—"}`,
+        `Timeline: ${form.timeline || "—"}`,
+        "",
+        form.message,
+      ].join("\n"),
+    );
     setSubmitted(true);
   };
 
@@ -42,10 +60,10 @@ export default function ContactFormSection() {
           {/* Left Column Form Card ("Send Us a Message") */}
           <div className="lg:col-span-7 bg-white rounded-3xl p-8 sm:p-10 shadow-sm border border-slate-200">
             <h2 className="text-2xl sm:text-3xl font-extrabold font-heading text-[#0B1623] mb-2">
-              Send Us a Message
+              {t.contact.sendTitle}
             </h2>
             <p className="text-xs sm:text-sm text-slate-600 mb-8">
-              Tell us about your project and we&apos;ll get back to you shortly.
+              {t.contact.sendDesc}
             </p>
 
             {!submitted ? (
@@ -54,7 +72,7 @@ export default function ContactFormSection() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div>
                     <label className="block text-xs font-bold text-[#0B1623] mb-1.5">
-                      Full Name*
+                      {t.contact.fullName}
                     </label>
                     <input
                       type="text"
@@ -63,14 +81,14 @@ export default function ContactFormSection() {
                       onChange={(e) =>
                         setForm({ ...form, fullName: e.target.value })
                       }
-                      placeholder="e.g. John Doe"
+                      placeholder={t.contact.namePh}
                       className="w-full px-4 py-3 bg-[#F7F9FB] border border-slate-300 rounded-xl text-xs text-slate-900 focus:outline-none focus:border-[#0E7C86] focus:bg-white transition-all"
                     />
                   </div>
 
                   <div>
                     <label className="block text-xs font-bold text-[#0B1623] mb-1.5">
-                      Email Address*
+                      {t.contact.email}
                     </label>
                     <input
                       type="email"
@@ -79,7 +97,7 @@ export default function ContactFormSection() {
                       onChange={(e) =>
                         setForm({ ...form, email: e.target.value })
                       }
-                      placeholder="john@example.com"
+                      placeholder={t.contact.emailPh}
                       className="w-full px-4 py-3 bg-[#F7F9FB] border border-slate-300 rounded-xl text-xs text-slate-900 focus:outline-none focus:border-[#0E7C86] focus:bg-white transition-all"
                     />
                   </div>
@@ -89,7 +107,7 @@ export default function ContactFormSection() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div>
                     <label className="block text-xs font-bold text-[#0B1623] mb-1.5">
-                      Company Name
+                      {t.contact.company}
                     </label>
                     <input
                       type="text"
@@ -97,14 +115,14 @@ export default function ContactFormSection() {
                       onChange={(e) =>
                         setForm({ ...form, company: e.target.value })
                       }
-                      placeholder="Your company or organization"
+                      placeholder={t.contact.companyPh}
                       className="w-full px-4 py-3 bg-[#F7F9FB] border border-slate-300 rounded-xl text-xs text-slate-900 focus:outline-none focus:border-[#0E7C86] focus:bg-white transition-all"
                     />
                   </div>
 
                   <div>
                     <label className="block text-xs font-bold text-[#0B1623] mb-1.5">
-                      Phone Number
+                      {t.contact.phone}
                     </label>
                     <input
                       type="tel"
@@ -121,7 +139,7 @@ export default function ContactFormSection() {
                 {/* Row 3: Service Dropdown */}
                 <div>
                   <label className="block text-xs font-bold text-[#0B1623] mb-1.5">
-                    Service You&apos;re Interested In
+                    {t.contact.service}
                   </label>
                   <div className="relative">
                     <select
@@ -131,14 +149,11 @@ export default function ContactFormSection() {
                       }
                       className="w-full px-4 py-3 bg-[#F7F9FB] border border-slate-300 rounded-xl text-xs text-slate-900 focus:outline-none focus:border-[#0E7C86] focus:bg-white transition-all appearance-none cursor-pointer"
                     >
-                      <option value="">Select a Service</option>
-                      <option value="web-dev">Web Development</option>
-                      <option value="mobile-dev">Mobile App Development</option>
-                      <option value="uiux-design">UI/UX Design</option>
-                      <option value="api-dev">API Development</option>
-                      <option value="custom-software">
-                        Custom Enterprise Software
-                      </option>
+                      <option value="">{t.contact.selectService}</option>
+                      <option value="dapps-protocols">{t.nav.dapps}</option>
+                      <option value="digital-identity">{t.nav.identity}</option>
+                      <option value="defi">{t.nav.defi}</option>
+                      <option value="ai-infrastructure">{t.nav.ai}</option>
                     </select>
                     <ChevronDown className="w-4 h-4 text-slate-400 absolute right-4 top-3.5 pointer-events-none" />
                   </div>
@@ -148,7 +163,7 @@ export default function ContactFormSection() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div>
                     <label className="block text-xs font-bold text-[#0B1623] mb-1.5">
-                      Project Budget
+                      {t.contact.budget}
                     </label>
                     <div className="relative">
                       <select
@@ -158,11 +173,15 @@ export default function ContactFormSection() {
                         }
                         className="w-full px-4 py-3 bg-[#F7F9FB] border border-slate-300 rounded-xl text-xs text-slate-900 focus:outline-none focus:border-[#0E7C86] focus:bg-white transition-all appearance-none cursor-pointer"
                       >
-                        <option value="">Select Budget Range</option>
-                        <option value="<5k">Less than $5,000</option>
-                        <option value="5k-15k">$5,000 - $15,000</option>
-                        <option value="15k-30k">$15,000 - $30,000</option>
-                        <option value=">30k">$30,000+</option>
+                        <option value="">{t.contact.selectBudget}</option>
+                        <option value="Research discussion">
+                          {t.contact.budgetLt5}
+                        </option>
+                        <option value="Pilot">{t.contact.budget5to15}</option>
+                        <option value="Production deployment">
+                          {t.contact.budget15to30}
+                        </option>
+                        <option value="Not sure yet">{t.contact.budget30}</option>
                       </select>
                       <ChevronDown className="w-4 h-4 text-slate-400 absolute right-4 top-3.5 pointer-events-none" />
                     </div>
@@ -170,7 +189,7 @@ export default function ContactFormSection() {
 
                   <div>
                     <label className="block text-xs font-bold text-[#0B1623] mb-1.5">
-                      Timeline
+                      {t.contact.timeline}
                     </label>
                     <div className="relative">
                       <select
@@ -180,11 +199,11 @@ export default function ContactFormSection() {
                         }
                         className="w-full px-4 py-3 bg-[#F7F9FB] border border-slate-300 rounded-xl text-xs text-slate-900 focus:outline-none focus:border-[#0E7C86] focus:bg-white transition-all appearance-none cursor-pointer"
                       >
-                        <option value="">Select Timeline</option>
-                        <option value="urgent">Urgent (&lt; 1 month)</option>
-                        <option value="1-3months">1 - 3 months</option>
-                        <option value="3-6months">3 - 6 months</option>
-                        <option value="flexible">Flexible</option>
+                        <option value="">{t.contact.selectTimeline}</option>
+                        <option value="urgent">{t.contact.timeUrgent}</option>
+                        <option value="1-3months">{t.contact.time13}</option>
+                        <option value="3-6months">{t.contact.time36}</option>
+                        <option value="flexible">{t.contact.timeFlex}</option>
                       </select>
                       <ChevronDown className="w-4 h-4 text-slate-400 absolute right-4 top-3.5 pointer-events-none" />
                     </div>
@@ -194,7 +213,7 @@ export default function ContactFormSection() {
                 {/* Row 5: Project Details Textarea */}
                 <div>
                   <label className="block text-xs font-bold text-[#0B1623] mb-1.5">
-                    Project Details*
+                    {t.contact.details}
                   </label>
                   <textarea
                     rows={4}
@@ -203,7 +222,7 @@ export default function ContactFormSection() {
                     onChange={(e) =>
                       setForm({ ...form, message: e.target.value })
                     }
-                    placeholder="Tell us about your project, goals, and requirements..."
+                    placeholder={t.contact.detailsPh}
                     className="w-full px-4 py-3 bg-[#F7F9FB] border border-slate-300 rounded-xl text-xs text-slate-900 focus:outline-none focus:border-[#0E7C86] focus:bg-white transition-all resize-none"
                   />
                 </div>
@@ -223,12 +242,12 @@ export default function ContactFormSection() {
                     htmlFor="agreePrivacy"
                     className="text-xs text-slate-600 cursor-pointer"
                   >
-                    I agree to the{" "}
+                    {t.contact.agree}{" "}
                     <Link
                       href="/privacy"
                       className="text-[#0E7C86] underline font-medium"
                     >
-                      Privacy Policy
+                      {t.contact.privacy}
                     </Link>
                   </label>
                 </div>
@@ -239,7 +258,7 @@ export default function ContactFormSection() {
                     type="submit"
                     className="w-full sm:w-auto px-8 py-3.5 bg-[#0E7C86] hover:bg-[#0B6871] text-white font-bold text-xs rounded-xl transition-all shadow-md flex items-center justify-center gap-2"
                   >
-                    <span>Send Message</span>
+                    <span>{t.contact.send}</span>
                     <Send className="w-3.5 h-3.5" />
                   </button>
                 </div>
@@ -250,18 +269,16 @@ export default function ContactFormSection() {
                   <CheckCircle2 className="w-8 h-8" />
                 </div>
                 <h3 className="text-2xl font-bold font-heading text-[#0B1623]">
-                  Message Sent Successfully!
+                  {t.contact.sentTitle}
                 </h3>
                 <p className="text-xs sm:text-sm text-slate-600 max-w-md mx-auto">
-                  Thank you for reaching out to JitSeeTec. One of our technical
-                  leads will review your inquiry and get back to you within 24
-                  hours.
+                  {t.contact.sentDesc}
                 </p>
                 <button
                   onClick={() => setSubmitted(false)}
                   className="px-6 py-2.5 bg-[#0E7C86] text-white font-bold text-xs rounded-xl hover:bg-[#0B6871] transition-colors"
                 >
-                  Send Another Message
+                  {t.contact.sendAnother}
                 </button>
               </div>
             )}
@@ -271,10 +288,10 @@ export default function ContactFormSection() {
           <div className="lg:col-span-5 bg-white rounded-3xl p-8 sm:p-10 shadow-sm border border-slate-200 flex flex-col justify-between">
             <div>
               <h2 className="text-2xl font-bold font-heading text-[#0B1623] mb-2">
-                Get in Touch
+                {t.contact.getInTouch}
               </h2>
               <p className="text-xs text-slate-600 mb-8">
-                Reach out to us through any of these channels.
+                {t.contact.getInTouchDesc}
               </p>
 
               <div className="space-y-6">
@@ -285,10 +302,12 @@ export default function ContactFormSection() {
                   </div>
                   <div>
                     <div className="text-xs font-bold text-[#0B1623]">
-                      Location
+                      {t.contact.location}
                     </div>
                     <div className="text-xs text-slate-600 mt-0.5 leading-relaxed">
-                      Imadol, Lalitpur, Bagmati Province, Nepal
+                      100 Tras Street, #16-01, 100 AM
+                      <br />
+                      Singapore 079027
                     </div>
                   </div>
                 </div>
@@ -300,13 +319,13 @@ export default function ContactFormSection() {
                   </div>
                   <div>
                     <div className="text-xs font-bold text-[#0B1623]">
-                      Phone
+                      {t.contact.phoneLabel}
                     </div>
                     <a
-                      href="tel:+9779811195091"
+                      href="tel:+85223256667"
                       className="text-xs text-slate-600 hover:text-[#0E7C86] mt-0.5 block font-medium"
                     >
-                      +977 98111 95091
+                      +852 2325 6667
                     </a>
                   </div>
                 </div>
@@ -318,13 +337,33 @@ export default function ContactFormSection() {
                   </div>
                   <div>
                     <div className="text-xs font-bold text-[#0B1623]">
-                      Email
+                      {t.contact.emailLabel}
                     </div>
                     <a
-                      href="mailto:hello@jitseetec.com"
+                      href="mailto:info@parallelchain-labs.io"
                       className="text-xs text-slate-600 hover:text-[#0E7C86] mt-0.5 block font-medium"
                     >
-                      hello@jitseetec.com
+                      info@parallelchain-labs.io
+                    </a>
+                  </div>
+                </div>
+
+                {/* Telegram */}
+                <div className="flex items-start gap-4">
+                  <div className="w-11 h-11 rounded-2xl bg-[#0E7C86]/10 text-[#0E7C86] flex items-center justify-center shrink-0">
+                    <FaTelegram className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <div className="text-xs font-bold text-[#0B1623]">
+                      {t.contact.telegram}
+                    </div>
+                    <a
+                      href="https://t.me/InfoParallelChainLabs"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="text-xs text-slate-600 hover:text-[#0E7C86] mt-0.5 block font-medium"
+                    >
+                      @InfoParallelChainLabs
                     </a>
                   </div>
                 </div>
@@ -336,39 +375,15 @@ export default function ContactFormSection() {
                   </div>
                   <div>
                     <div className="text-xs font-bold text-[#0B1623]">
-                      Business Hours
+                      {t.contact.hours}
                     </div>
                     <div className="text-xs text-slate-600 mt-0.5 leading-relaxed">
-                      Sunday - Friday: 9:00 AM - 6:00 PM
+                      {t.contact.hoursValue}
                       <br />
-                      (Nepal Time)
+                      {t.contact.hoursTz}
                     </div>
                   </div>
                 </div>
-              </div>
-            </div>
-
-            {/* Follow Us */}
-            <div className="pt-8 mt-8 border-t border-slate-200">
-              <div className="text-xs font-bold text-[#0B1623] mb-3">
-                Follow Us
-              </div>
-              <div className="flex items-center gap-3">
-                {["linkedin", "github", "twitter", "facebook"].map(
-                  (platform, idx) => (
-                    <a
-                      key={idx}
-                      href={`https://${platform}.com`}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="w-9 h-9 rounded-xl bg-[#F7F9FB] hover:bg-[#0E7C86] text-slate-700 hover:text-white flex items-center justify-center transition-colors border border-slate-200"
-                    >
-                      <span className="capitalize text-[10px] font-bold">
-                        {platform[0].toUpperCase()}
-                      </span>
-                    </a>
-                  ),
-                )}
               </div>
             </div>
           </div>
