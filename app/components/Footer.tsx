@@ -14,20 +14,23 @@ import {
 } from "lucide-react";
 import { FaTelegram } from "react-icons/fa";
 import { useLanguage } from "./LanguageProvider";
-import { openLabMailto } from "../lib/mailto";
+import { submitInquiry } from "../lib/submit-inquiry";
 
 export default function Footer() {
   const { t } = useLanguage();
   const [email, setEmail] = useState("");
   const [subscribed, setSubscribed] = useState(false);
 
-  const handleSubscribe = (e: React.FormEvent) => {
+  const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!email) return;
-    openLabMailto(
-      "Updates request — ParallelChain Labs",
-      `Please add this address to lab updates:\n\n${email}`,
-    );
+    const result = await submitInquiry({
+      kind: "updates",
+      name: "Updates request",
+      email,
+      message: `Please add this address to lab updates: ${email}`,
+    });
+    if (!result.ok) return;
     setSubscribed(true);
     setEmail("");
     setTimeout(() => setSubscribed(false), 6000);
@@ -117,12 +120,20 @@ export default function Footer() {
                   </Link>
                 </li>
                 <li>
-                  <a
-                    href="mailto:info@parallelchain-labs.io?subject=Career%20inquiry%20-%20ParallelChain%20Labs"
+                  <Link
+                    href="/careers"
                     className="hover:text-[#2CCFD3] transition-colors"
                   >
                     {t.footer.careers}
-                  </a>
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/case-studies"
+                    className="hover:text-[#2CCFD3] transition-colors"
+                  >
+                    {t.footer.cases}
+                  </Link>
                 </li>
                 <li>
                   <Link
@@ -171,6 +182,14 @@ export default function Footer() {
                     className="hover:text-[#2CCFD3] transition-colors"
                   >
                     {t.nav.ai}
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/portfolio"
+                    className="hover:text-[#2CCFD3] transition-colors"
+                  >
+                    {t.footer.platforms}
                   </Link>
                 </li>
               </ul>

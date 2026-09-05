@@ -27,7 +27,7 @@ export default function ServiceCards({
       title: t.services.s1Title,
       description: t.services.s1Desc,
       image: {
-        src: "/images/work_aether.png",
+        src: "/images/portfolio/mainnet.jpg",
         alt: t.services.s1Title,
       },
       features: [t.services.s1f1, t.services.s1f2, t.services.s1f3],
@@ -49,7 +49,7 @@ export default function ServiceCards({
       title: t.services.s3Title,
       description: t.services.s3Desc,
       image: {
-        src: "/images/work_novaledger.png",
+        src: "/images/portfolio/ipc.jpg",
         alt: t.services.s3Title,
       },
       features: [t.services.s3f1, t.services.s3f2, t.services.s3f3],
@@ -60,7 +60,7 @@ export default function ServiceCards({
       title: t.services.s4Title,
       description: t.services.s4Desc,
       image: {
-        src: "/images/edusphere_lms.png",
+        src: "/images/portfolio/ai.jpg",
         alt: t.services.s4Title,
       },
       features: [t.services.s4f1, t.services.s4f2, t.services.s4f3],

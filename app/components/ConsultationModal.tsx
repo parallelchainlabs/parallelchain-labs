@@ -1,9 +1,10 @@
 "use client";
 
 import React, { useState } from "react";
-import { X, Send, CheckCircle2, Cpu } from "lucide-react";
+import { X, Send, Cpu } from "lucide-react";
 import { useLanguage } from "./LanguageProvider";
-import { openLabMailto } from "../lib/mailto";
+import { submitInquiry } from "../lib/submit-inquiry";
+import InquiryReceipt from "./InquiryReceipt";
 
 interface ConsultationModalProps {
   isOpen: boolean;
@@ -15,7 +16,9 @@ export default function ConsultationModal({
   onClose,
 }: ConsultationModalProps) {
   const { t } = useLanguage();
-  const [submitted, setSubmitted] = useState(false);
+  const [submitted, setSubmitted] = useState("");
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState("");
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -26,24 +29,28 @@ export default function ConsultationModal({
 
   if (!isOpen) return null;
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    openLabMailto(
-      `Consultation — ${formData.service}`,
-      [
-        `Name: ${formData.name}`,
-        `Email: ${formData.email}`,
-        `Area: ${formData.service}`,
-        `Engagement: ${formData.budget}`,
-        "",
-        formData.message,
-      ].join("\n"),
-    );
-    setSubmitted(true);
+    setSending(true);
+    setError("");
+    const result = await submitInquiry({
+      kind: "consult",
+      name: formData.name,
+      email: formData.email,
+      service: formData.service,
+      engagement: formData.budget,
+      message: formData.message,
+    });
+    setSending(false);
+    if (!result.ok || !result.reference) {
+      setError(t.inquiry.error);
+      return;
+    }
+    setSubmitted(result.reference);
   };
 
   const handleReset = () => {
-    setSubmitted(false);
+    setSubmitted("");
     onClose();
   };
 
@@ -165,37 +172,28 @@ export default function ConsultationModal({
                 />
               </div>
 
+              {error ? (
+                <p className="text-xs text-red-400">{error}</p>
+              ) : null}
               <button
                 type="submit"
-                className="w-full flex items-center justify-center gap-2 py-3 bg-[#0E7C86] hover:bg-[#2CCFD3] hover:text-[#0B1623] text-white font-semibold rounded-lg shadow-lg transition-all duration-300"
+                disabled={sending}
+                className="w-full flex items-center justify-center gap-2 py-3 bg-[#0E7C86] hover:bg-[#2CCFD3] hover:text-[#0B1623] text-white font-semibold rounded-lg shadow-lg transition-all duration-300 disabled:opacity-60"
               >
                 <Send className="w-4 h-4" />
-                <span>{t.modal.submit}</span>
+                <span>{sending ? t.inquiry.sending : t.modal.submit}</span>
               </button>
             </form>
           </div>
         ) : (
-          <div className="text-center py-8 space-y-4 animate-in zoom-in-95 duration-200">
-            <div className="w-16 h-16 bg-[#16A34A]/20 text-[#16A34A] rounded-full flex items-center justify-center mx-auto">
-              <CheckCircle2 className="w-10 h-10" />
-            </div>
-            <h3 className="text-2xl font-bold font-heading text-white">
-              {t.modal.doneTitle}
-            </h3>
-            <p className="text-sm text-slate-300 max-w-xs mx-auto leading-relaxed">
-              {t.modal.thankYou}{" "}
-              <span className="text-[#2CCFD3] font-semibold">
-                {formData.name}
-              </span>
-              . {t.modal.doneDesc}
-            </p>
-            <button
-              onClick={handleReset}
-              className="mt-4 px-6 py-2.5 bg-slate-800 hover:bg-slate-700 text-white text-sm font-semibold rounded-lg transition-colors"
-            >
-              {t.modal.close}
-            </button>
-          </div>
+          <InquiryReceipt
+            tone="dark"
+            reference={submitted}
+            name={formData.name}
+            preview={formData.message}
+            onReset={handleReset}
+            resetLabel={t.modal.close}
+          />
         )}
       </div>
     </div>

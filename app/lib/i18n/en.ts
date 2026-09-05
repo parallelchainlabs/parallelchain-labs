@@ -1,3 +1,5 @@
+import { siteEn } from "./site-en";
+
 export const en = {
   lang: {
     en: "EN",
@@ -10,6 +12,7 @@ export const en = {
     portfolio: "Portfolio",
     about: "About",
     contact: "Contact",
+    careers: "Careers",
     book: "Book a Consultation",
     toggleMenu: "Toggle menu",
     dapps: "dApps & Protocols",
@@ -29,6 +32,8 @@ export const en = {
     team: "Team",
     careers: "Careers",
     contact: "Contact",
+    cases: "Deployments",
+    platforms: "Platforms",
     services: "Services",
     legal: "Legal",
     privacy: "Privacy Policy",
@@ -38,8 +43,8 @@ export const en = {
     stayLoopDesc:
       "Email the lab to request research notes and product updates. We will reply from the same inbox.",
     emailPlaceholder: "Enter your email address",
-    subscribe: "Email us",
-    subscribed: "Your email app should open. If it does not, write to info@parallelchain-labs.io.",
+    subscribe: "Request updates",
+    subscribed: "Request received. We will write back from the lab inbox.",
     copyright: "© 2026 ParallelChain Labs. All rights reserved.",
     builtWith: "Research and engineering for trusted digital infrastructure.",
     dataSafe: "Your data is safe with us.",
@@ -144,10 +149,10 @@ export const en = {
     companyPh: "Your company or organization",
     agree: "I agree to the",
     privacy: "Privacy Policy",
-    send: "Open email to the lab",
-    sentTitle: "Email ready",
+    send: "Send inquiry",
+    sentTitle: "We received your inquiry",
     sentDesc:
-      "If your email app did not open, write to info@parallelchain-labs.io. We aim to reply within 24 business hours.",
+      "The lab has this request. We aim to reply within 24 business hours from info@parallelchain-labs.io.",
     sendAnother: "Send Another Message",
     privacyAlert: "Please agree to the Privacy Policy to proceed.",
     getInTouch: "Get in Touch",
@@ -210,10 +215,10 @@ export const en = {
     summary: "What you want to discuss",
     summaryPh:
       "Protocol, identity, Mainnet/IPC, or AI infrastructure — and any constraints we should know.",
-    submit: "Open email to the lab",
-    doneTitle: "Email ready",
+    submit: "Send inquiry",
+    doneTitle: "We received your inquiry",
     doneDesc:
-      "If your email app did not open, write to info@parallelchain-labs.io. We aim to reply within 24 business hours.",
+      "The lab has this request. We aim to reply within 24 business hours from info@parallelchain-labs.io.",
     thankYou: "Thank you,",
     close: "Close Window",
     closeAria: "Close modal",
@@ -312,7 +317,7 @@ export const en = {
     hireTitle: "Build the next trusted protocol with us",
     hireDesc:
       "We look for protocol, cryptography, identity, and machine learning engineers who want to bridge Web2 and Web3 in production.",
-    hireCta: "Email the lab about roles",
+    hireCta: "See open roles",
   },
   services: {
     breadcrumb: "Services",
@@ -447,6 +452,7 @@ export const en = {
     terms4:
       "Questions about these terms: info@parallelchain-labs.io.",
   },
+  ...siteEn,
 };
 
 export type Messages = typeof en;

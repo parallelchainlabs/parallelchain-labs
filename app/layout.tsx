@@ -29,11 +29,12 @@ export const metadata: Metadata = {
     "ParallelChain Labs is a software research and development company focused on building blockchain and AI technologies with real-world applications.",
   icons: {
     icon: [
+      { url: "/logo/logo.png", type: "image/png" },
       { url: "/favicon-96x96.png", sizes: "96x96", type: "image/png" },
       { url: "/favicon.svg", type: "image/svg+xml" },
-      { url: "/favicon.ico" },
+      { url: "/favicon.ico", sizes: "32x32" },
     ],
-    shortcut: "/favicon.ico",
+    shortcut: "/favicon-96x96.png",
     apple: "/apple-touch-icon.png",
   },
   manifest: "/site.webmanifest",
@@ -51,6 +52,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      data-scroll-behavior="smooth"
       className={`${plusJakartaSans.variable} ${inter.variable} ${notoSansSc.variable} h-full antialiased scroll-smooth`}
     >
       <body className="min-h-full flex flex-col bg-[#0B1623] text-white font-sans selection:bg-[#0E7C86] selection:text-white">

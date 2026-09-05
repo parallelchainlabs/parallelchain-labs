@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { useLanguage } from "../LanguageProvider";
+import { productMeta } from "../../lib/catalog";
 
 export default function FeaturedWorkSection() {
   const { t } = useLanguage();
@@ -13,22 +14,25 @@ export default function FeaturedWorkSection() {
       title: t.home.proj1Title,
       category: t.portfolio.enterprise,
       desc: t.home.proj1Desc,
-      image: "/images/work_novaledger.png",
+      image: productMeta.enterprise.image,
       tags: ["Enterprise", "PoIM", "Privacy"],
+      href: "/products/enterprise",
     },
     {
       title: t.home.proj2Title,
       category: t.nav.identity,
       desc: t.home.proj2Desc,
-      image: "/images/work_privid.png",
+      image: productMeta.bingo.image,
       tags: ["BINGO", "KYC", "GDPR"],
+      href: "/products/bingo",
     },
     {
       title: t.home.proj3Title,
       category: t.nav.dapps,
       desc: t.home.proj3Desc,
-      image: "/images/work_aether.png",
+      image: productMeta.mainnet.image,
       tags: ["Mainnet", "PoS", "IPC"],
+      href: "/products/mainnet",
     },
   ];
 
@@ -62,8 +66,9 @@ export default function FeaturedWorkSection() {
         {/* 3 Featured Project Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {projects.map((project, idx) => (
-            <div
+            <Link
               key={idx}
+              href={project.href}
               className="bg-white border border-slate-200 rounded-3xl overflow-hidden group hover:border-[#0E7C86] hover:shadow-xl transition-all flex flex-col justify-between"
             >
               <div>
@@ -101,7 +106,7 @@ export default function FeaturedWorkSection() {
                   ))}
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

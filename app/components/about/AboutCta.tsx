@@ -152,13 +152,13 @@ export default function AboutCta({ onOpenConsultation }: AboutCtaProps) {
               </p>
             </div>
 
-            <a
-              href="mailto:info@parallelchain-labs.io?subject=Career%20Inquiry%20-%20ParallelChain%20Labs"
+            <Link
+              href="/careers"
               className="shrink-0 px-8 py-3.5 bg-[#0E7C86] hover:bg-[#0B6871] text-white font-bold text-xs rounded-xl transition-all shadow-md flex items-center gap-2"
             >
               <span>{t.about.hireCta}</span>
               <ArrowRight className="w-4 h-4" />
-            </a>
+            </Link>
           </div>
         </div>
       </section>

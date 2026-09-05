@@ -108,3 +108,26 @@
 .animate-marquee-reverse:hover {
   animation-play-state: paused;
 }
+
+@keyframes dash-flow {
+  to {
+    stroke-dashoffset: -24;
+  }
+}
+
+.animate-dash-flow {
+  animation: dash-flow 1.2s linear infinite;
+}
+
+@keyframes status-flow {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(160%);
+  }
+}
+
+.animate-status-flow {
+  animation: status-flow 2.4s ease-in-out infinite;
+}

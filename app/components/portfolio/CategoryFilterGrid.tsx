@@ -2,8 +2,10 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { ChevronDown } from "lucide-react";
 import { useLanguage } from "../LanguageProvider";
+import { productMeta } from "../../lib/catalog";
 
 export default function CategoryFilterGrid() {
   const { t } = useLanguage();
@@ -40,7 +42,8 @@ export default function CategoryFilterGrid() {
       title: t.portfolio.p1Title,
       desc: t.portfolio.p1Desc,
       tags: ["Enterprise", "PoIM", "Privacy"],
-      image: "/images/work_novaledger.png",
+      image: productMeta.enterprise.image,
+      href: "/products/enterprise",
     },
     {
       id: "bingo",
@@ -49,7 +52,8 @@ export default function CategoryFilterGrid() {
       title: t.portfolio.p2Title,
       desc: t.portfolio.p2Desc,
       tags: ["BINGO", "KYC", "GDPR"],
-      image: "/images/work_privid.png",
+      image: productMeta.bingo.image,
+      href: "/products/bingo",
     },
     {
       id: "mainnet",
@@ -58,7 +62,8 @@ export default function CategoryFilterGrid() {
       title: t.portfolio.p3Title,
       desc: t.portfolio.p3Desc,
       tags: ["Mainnet", "PoS", "L1"],
-      image: "/images/work_aether.png",
+      image: productMeta.mainnet.image,
+      href: "/products/mainnet",
     },
     {
       id: "ipc",
@@ -67,7 +72,8 @@ export default function CategoryFilterGrid() {
       title: t.portfolio.p4Title,
       desc: t.portfolio.p4Desc,
       tags: ["IPC", "Enterprise", "Mainnet"],
-      image: "/images/work_ipc.jpg",
+      image: productMeta.ipc.image,
+      href: "/products/ipc",
     },
     {
       id: "wallet",
@@ -76,7 +82,8 @@ export default function CategoryFilterGrid() {
       title: t.portfolio.p5Title,
       desc: t.portfolio.p5Desc,
       tags: ["Wallet", "Biometrics", "SSI"],
-      image: "/images/work_wallet.jpg",
+      image: productMeta.wallet.image,
+      href: "/products/wallet",
     },
     {
       id: "ai-infra",
@@ -85,7 +92,8 @@ export default function CategoryFilterGrid() {
       title: t.portfolio.p6Title,
       desc: t.portfolio.p6Desc,
       tags: ["AI", "Trusted Compute", "Research"],
-      image: "/images/about_lab_hero.png",
+      image: productMeta["ai-infra"].image,
+      href: "/products/ai-infra",
     },
   ];
 
@@ -133,8 +141,9 @@ export default function CategoryFilterGrid() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {filteredProjects.map((project) => (
-            <div
+            <Link
               key={project.id}
+              href={project.href}
               className="bg-white border border-slate-200 rounded-3xl overflow-hidden group hover:border-[#0E7C86] hover:shadow-xl transition-all shadow-sm flex flex-col justify-between"
             >
               <div>
@@ -178,7 +187,7 @@ export default function CategoryFilterGrid() {
                   ))}
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

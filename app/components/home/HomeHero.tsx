@@ -2,8 +2,10 @@
 
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { useLanguage } from "../LanguageProvider";
+import NetworkStatusWidget from "../NetworkStatusWidget";
 
 interface HomeHeroProps {
   onOpenConsultation: () => void;
@@ -56,17 +58,25 @@ export default function HomeHero({ onOpenConsultation }: HomeHeroProps) {
               {t.home.trusted}
             </p>
             <div className="flex flex-wrap items-center justify-center lg:justify-start gap-6 lg:gap-8 opacity-80 hover:opacity-100 transition-opacity">
-              {["Enterprise", "Mainnet", "BINGO", "ParallelWallet", "IPC"].map(
-                (logo, idx) => (
-                  <div
-                    key={idx}
-                    className="flex items-center gap-2 text-slate-300 font-heading font-bold text-sm hover:text-[#2CCFD3] transition-colors cursor-pointer"
-                  >
-                    <div className="w-2.5 h-2.5 rounded-full bg-[#0E7C86]" />
-                    <span>{logo}</span>
-                  </div>
-                ),
-              )}
+              {[
+                { label: "Enterprise", href: "/products/enterprise" },
+                { label: "Mainnet", href: "/products/mainnet" },
+                { label: "BINGO", href: "/products/bingo" },
+                { label: "ParallelWallet", href: "/products/wallet" },
+                { label: "IPC", href: "/products/ipc" },
+              ].map((logo) => (
+                <Link
+                  key={logo.href}
+                  href={logo.href}
+                  className="flex items-center gap-2 text-slate-300 font-heading font-bold text-sm hover:text-[#2CCFD3] transition-colors"
+                >
+                  <div className="w-2.5 h-2.5 rounded-full bg-[#0E7C86]" />
+                  <span>{logo.label}</span>
+                </Link>
+              ))}
+            </div>
+            <div className="pt-6 max-w-2xl mx-auto lg:mx-0">
+              <NetworkStatusWidget compact />
             </div>
           </div>
         </div>

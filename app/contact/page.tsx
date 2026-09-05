@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { Suspense, useState } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import ConsultationModal from "../components/ConsultationModal";
@@ -26,7 +26,9 @@ export default function ContactPage() {
         <ContactHero />
 
         {/* Form & Direct Contact Info Grid */}
-        <ContactFormSection />
+        <Suspense fallback={null}>
+          <ContactFormSection />
+        </Suspense>
 
         {/* Interactive Google Map */}
         <InteractiveMapSection />

@@ -1,5 +1,10 @@
-import { redirect } from "next/navigation";
+import PageShell from "../components/PageShell";
+import CaseIndex from "../components/casestudy/CaseIndex";
 
 export default function CaseStudiesPage() {
-  redirect("/portfolio");
+  return (
+    <PageShell>
+      <CaseIndex />
+    </PageShell>
+  );
 }

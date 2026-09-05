@@ -2,9 +2,9 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 import {
   Send,
-  CheckCircle2,
   MapPin,
   Phone,
   Mail,
@@ -13,44 +13,53 @@ import {
 } from "lucide-react";
 import { FaTelegram } from "react-icons/fa";
 import { useLanguage } from "../LanguageProvider";
-import { openLabMailto } from "../../lib/mailto";
+import { submitInquiry } from "../../lib/submit-inquiry";
+import InquiryReceipt from "../InquiryReceipt";
 
 export default function ContactFormSection() {
   const { t } = useLanguage();
-  const [submitted, setSubmitted] = useState(false);
+  const searchParams = useSearchParams();
+  const productHint = searchParams.get("product") || "";
+  const [submitted, setSubmitted] = useState("");
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState("");
   const [form, setForm] = useState({
     fullName: "",
     email: "",
     company: "",
     phone: "",
-    service: "",
+    service: productHint,
     budget: "",
     timeline: "",
     message: "",
     agreePrivacy: false,
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!form.agreePrivacy) {
       alert(t.contact.privacyAlert);
       return;
     }
-    openLabMailto(
-      `Inquiry from ${form.fullName || "website"}`,
-      [
-        `Name: ${form.fullName}`,
-        `Email: ${form.email}`,
-        `Company: ${form.company || "—"}`,
-        `Phone: ${form.phone || "—"}`,
-        `Service: ${form.service || "—"}`,
-        `Engagement: ${form.budget || "—"}`,
-        `Timeline: ${form.timeline || "—"}`,
-        "",
-        form.message,
-      ].join("\n"),
-    );
-    setSubmitted(true);
+    setSending(true);
+    setError("");
+    const result = await submitInquiry({
+      kind: "contact",
+      name: form.fullName,
+      email: form.email,
+      company: form.company,
+      phone: form.phone,
+      service: form.service,
+      engagement: form.budget,
+      timeline: form.timeline,
+      message: form.message,
+    });
+    setSending(false);
+    if (!result.ok || !result.reference) {
+      setError(t.inquiry.error);
+      return;
+    }
+    setSubmitted(result.reference);
   };
 
   return (
@@ -253,34 +262,25 @@ export default function ContactFormSection() {
                 </div>
 
                 {/* Submit Button */}
+                {error ? <p className="text-xs text-red-600">{error}</p> : null}
                 <div className="pt-2">
                   <button
                     type="submit"
-                    className="w-full sm:w-auto px-8 py-3.5 bg-[#0E7C86] hover:bg-[#0B6871] text-white font-bold text-xs rounded-xl transition-all shadow-md flex items-center justify-center gap-2"
+                    disabled={sending}
+                    className="w-full sm:w-auto px-8 py-3.5 bg-[#0E7C86] hover:bg-[#0B6871] text-white font-bold text-xs rounded-xl transition-all shadow-md flex items-center justify-center gap-2 disabled:opacity-60"
                   >
-                    <span>{t.contact.send}</span>
+                    <span>{sending ? t.inquiry.sending : t.contact.send}</span>
                     <Send className="w-3.5 h-3.5" />
                   </button>
                 </div>
               </form>
             ) : (
-              <div className="py-12 text-center space-y-4">
-                <div className="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto shadow-md">
-                  <CheckCircle2 className="w-8 h-8" />
-                </div>
-                <h3 className="text-2xl font-bold font-heading text-[#0B1623]">
-                  {t.contact.sentTitle}
-                </h3>
-                <p className="text-xs sm:text-sm text-slate-600 max-w-md mx-auto">
-                  {t.contact.sentDesc}
-                </p>
-                <button
-                  onClick={() => setSubmitted(false)}
-                  className="px-6 py-2.5 bg-[#0E7C86] text-white font-bold text-xs rounded-xl hover:bg-[#0B6871] transition-colors"
-                >
-                  {t.contact.sendAnother}
-                </button>
-              </div>
+              <InquiryReceipt
+                reference={submitted}
+                name={form.fullName}
+                preview={form.message}
+                onReset={() => setSubmitted("")}
+              />
             )}
           </div>
 

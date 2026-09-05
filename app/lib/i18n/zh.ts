@@ -1,4 +1,5 @@
 import type { Messages } from "./en";
+import { siteZh } from "./site-zh";
 
 export const zh: Messages = {
   lang: {
@@ -12,6 +13,7 @@ export const zh: Messages = {
     portfolio: "案例",
     about: "关于我们",
     contact: "联系我们",
+    careers: "加入我们",
     book: "预约咨询",
     toggleMenu: "打开菜单",
     dapps: "去中心化应用与协议",
@@ -31,6 +33,8 @@ export const zh: Messages = {
     team: "团队",
     careers: "加入我们",
     contact: "联系我们",
+    cases: "部署",
+    platforms: "平台",
     services: "服务",
     legal: "法律信息",
     privacy: "隐私政策",
@@ -40,8 +44,8 @@ export const zh: Messages = {
     stayLoopDesc:
       "如需研究笔记与产品动态，请发邮件给实验室。我们会通过同一邮箱回复。",
     emailPlaceholder: "请输入您的电子邮箱",
-    subscribe: "发邮件",
-    subscribed: "应已打开邮件应用。如未打开，请写信至 info@parallelchain-labs.io。",
+    subscribe: "申请动态",
+    subscribed: "已收到申请。实验室邮箱会回复您。",
     copyright: "© 2026 ParallelChain Labs. 保留所有权利。",
     builtWith: "以研究与工程打造可信数字基础设施。",
     dataSafe: "您的数据由我们妥善保护。",
@@ -138,10 +142,10 @@ export const zh: Messages = {
     companyPh: "您的公司或机构",
     agree: "我已阅读并同意",
     privacy: "隐私政策",
-    send: "打开邮件联系实验室",
-    sentTitle: "邮件已准备好",
+    send: "发送问询",
+    sentTitle: "我们已收到您的问询",
     sentDesc:
-      "如未打开邮件应用，请写信至 info@parallelchain-labs.io。我们目标在 24 个工作小时内回复。",
+      "实验室已记录本次请求。我们会在 24 个工作小时内通过 info@parallelchain-labs.io 回复。",
     sendAnother: "再发一条消息",
     privacyAlert: "请先同意隐私政策后再提交。",
     getInTouch: "联系方式",
@@ -202,10 +206,10 @@ export const zh: Messages = {
     summary: "希望讨论的内容",
     summaryPh:
       "协议、身份、主网/IPC 或人工智能基础设施，以及我们应了解的约束。",
-    submit: "打开邮件联系实验室",
-    doneTitle: "邮件已准备",
+    submit: "发送问询",
+    doneTitle: "我们已收到您的问询",
     doneDesc:
-      "如未打开邮件应用，请写信至 info@parallelchain-labs.io。我们目标在 24 个工作小时内回复。",
+      "实验室已记录本次请求。我们会在 24 个工作小时内通过 info@parallelchain-labs.io 回复。",
     thankYou: "谢谢，",
     close: "关闭窗口",
     closeAria: "关闭弹窗",
@@ -303,7 +307,7 @@ export const zh: Messages = {
     hireTitle: "与我们一起构建下一代可信协议",
     hireDesc:
       "我们寻找希望在生产环境中连接 Web2 与 Web3 的协议、密码学、身份与机器学习工程师。",
-    hireCta: "发邮件咨询职位",
+    hireCta: "查看在招职位",
   },
   services: {
     breadcrumb: "服务",
@@ -430,4 +434,5 @@ export const zh: Messages = {
     terms4:
       "条款相关问题请联系 info@parallelchain-labs.io。",
   },
+  ...siteZh,
 };
