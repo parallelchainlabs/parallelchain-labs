@@ -246,10 +246,10 @@ export default function Footer() {
                 <li className="flex items-center gap-2.5 text-slate-400">
                   <Mail className="w-4 h-4 text-[#2CCFD3] shrink-0" />
                   <a
-                    href="mailto:info@parallelchain-labs.io"
+                    href="mailto:info@parallelchain-labs.com"
                     className="hover:text-white transition-colors"
                   >
-                    info@parallelchain-labs.io
+                    info@parallelchain-labs.com
                   </a>
                 </li>
                 <li className="flex items-center gap-2.5 text-slate-400">

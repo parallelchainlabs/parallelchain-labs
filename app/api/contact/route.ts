@@ -2,7 +2,7 @@ import { appendFile, mkdir, writeFile } from "fs/promises";
 import path from "path";
 import { NextRequest } from "next/server";
 
-const LAB_EMAIL = "info@parallelchain-labs.io";
+const LAB_EMAIL = "info@parallelchain-labs.com";
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const MAX_CV_BYTES = 5 * 1024 * 1024;
 const CV_TYPES = new Set([

@@ -145,7 +145,7 @@ export const zh: Messages = {
     send: "发送问询",
     sentTitle: "我们已收到您的问询",
     sentDesc:
-      "实验室已记录本次请求。我们会在 24 个工作小时内通过 info@parallelchain-labs.io 回复。",
+      "实验室已记录本次请求。我们会在 24 个工作小时内通过 info@parallelchain-labs.com 回复。",
     sendAnother: "再发一条消息",
     privacyAlert: "请先同意隐私政策后再提交。",
     getInTouch: "联系方式",
@@ -178,13 +178,13 @@ export const zh: Messages = {
     faqTitle: "常见问题",
     faq1q: "通常多久能收到回复？",
     faq1a:
-      "我们目标在 24 个工作小时内（新加坡时间）通过 info@parallelchain-labs.io 回复。",
+      "我们目标在 24 个工作小时内（新加坡时间）通过 info@parallelchain-labs.com 回复。",
     faq2q: "你们与哪些机构合作？",
     faq2a:
       "我们与需要许可链或公有链轨道、身份，或可信基础设施上人工智能的企业、金融机构及合作伙伴合作。",
     faq3q: "可以签署保密协议吗？",
     faq3a:
-      "可以。请写信至 info@parallelchain-labs.io，我们可在详细技术讨论前安排保密协议。",
+      "可以。请写信至 info@parallelchain-labs.com，我们可在详细技术讨论前安排保密协议。",
     faq4q: "典型合作是怎样的？",
     faq4a:
       "多数从研究或架构讨论开始，再在 Enterprise、身份或主网/IPC 上做试点，合适后再进入生产部署。",
@@ -209,7 +209,7 @@ export const zh: Messages = {
     submit: "发送问询",
     doneTitle: "我们已收到您的问询",
     doneDesc:
-      "实验室已记录本次请求。我们会在 24 个工作小时内通过 info@parallelchain-labs.io 回复。",
+      "实验室已记录本次请求。我们会在 24 个工作小时内通过 info@parallelchain-labs.com 回复。",
     thankYou: "谢谢，",
     close: "关闭窗口",
     closeAria: "关闭弹窗",
@@ -418,13 +418,13 @@ export const zh: Messages = {
     updated: "最近更新：2026 年 9 月 3 日",
     back: "返回联系页",
     privacy1:
-      "本网站由 ParallelChain Labs（新加坡）运营。联系方式：info@parallelchain-labs.io，新加坡 079027，Tras Street 100 号，#16-01，100 AM，电话 +852 2325 6667。",
+      "本网站由 ParallelChain Labs（新加坡）运营。联系方式：info@parallelchain-labs.com，新加坡 079027，Tras Street 100 号，#16-01，100 AM，电话 +852 2325 6667。",
     privacy2:
       "若您发邮件或使用联系表单，我们会收到您提供的姓名、邮箱、机构与留言以便回复。我们不会出售这些信息。问询记录仅在回复及（如您要求）继续技术讨论所需期间保留。",
     privacy3:
       "本站可能在浏览器中保存语言偏好（本地存储），不用于广告。嵌入地图由 Google 提供，适用 Google 条款。",
     privacy4:
-      "如需查阅、更正或删除问询数据，请发邮件至 info@parallelchain-labs.io。若新加坡或其他适用法律赋予您更多权利，我们通过同一地址处理。",
+      "如需查阅、更正或删除问询数据，请发邮件至 info@parallelchain-labs.com。若新加坡或其他适用法律赋予您更多权利，我们通过同一地址处理。",
     terms1:
       "本网站仅介绍 ParallelChain Labs 的研究与产品，不构成证券要约、业绩保证或法律意见。",
     terms2:
@@ -432,7 +432,7 @@ export const zh: Messages = {
     terms3:
       "网站内容按“现状”提供。我们可能不经通知更新页面。具约束力的合作须以与 ParallelChain Labs 签订的书面协议为准。",
     terms4:
-      "条款相关问题请联系 info@parallelchain-labs.io。",
+      "条款相关问题请联系 info@parallelchain-labs.com。",
   },
   ...siteZh,
 };

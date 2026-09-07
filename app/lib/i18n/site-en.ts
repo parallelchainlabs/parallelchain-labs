@@ -4,11 +4,11 @@ export const siteEn = {
     sending: "Sending…",
     receivedTitle: "We received your inquiry",
     receivedDesc:
-      "The lab has this request. We aim to reply within 24 business hours from info@parallelchain-labs.io.",
+      "The lab has this request. We aim to reply within 24 business hours from info@parallelchain-labs.com.",
     reference: "Reference",
     summary: "What you sent",
     sendAnother: "Send another message",
-    error: "Something went wrong. Try again, or email info@parallelchain-labs.io.",
+    error: "Something went wrong. Try again, or email info@parallelchain-labs.com.",
     copy: "Copy reference",
     copied: "Copied",
     requestUpdates: "Request updates",

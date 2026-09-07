@@ -340,10 +340,10 @@ export default function ContactFormSection() {
                       {t.contact.emailLabel}
                     </div>
                     <a
-                      href="mailto:info@parallelchain-labs.io"
+                      href="mailto:info@parallelchain-labs.com"
                       className="text-xs text-slate-600 hover:text-[#0E7C86] mt-0.5 block font-medium"
                     >
-                      info@parallelchain-labs.io
+                      info@parallelchain-labs.com
                     </a>
                   </div>
                 </div>
