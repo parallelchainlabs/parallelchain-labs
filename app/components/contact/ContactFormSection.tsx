@@ -340,10 +340,10 @@ export default function ContactFormSection() {
                       {t.contact.emailLabel}
                     </div>
                     <a
-                      href="mailto:info@parallelchain-labs.com"
+                      href="mailto:hiring@parallelchain-lab.com"
                       className="text-xs text-slate-600 hover:text-[#0E7C86] mt-0.5 block font-medium"
                     >
-                      info@parallelchain-labs.com
+                      hiring@parallelchain-lab.com
                     </a>
                   </div>
                 </div>
@@ -358,12 +358,12 @@ export default function ContactFormSection() {
                       {t.contact.telegram}
                     </div>
                     <a
-                      href="https://t.me/InfoParallelChainLabs"
+                      href="https://t.me/hiring_parallelchainlab"
                       target="_blank"
                       rel="noreferrer"
                       className="text-xs text-slate-600 hover:text-[#0E7C86] mt-0.5 block font-medium"
                     >
-                      @InfoParallelChainLabs
+                      @hiring_parallelchainlab
                     </a>
                   </div>
                 </div>

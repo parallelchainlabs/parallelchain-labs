@@ -11,6 +11,11 @@ export default function LeadershipTeam() {
 
   const teamMembers = [
     {
+      name: t.about.r9,
+      role: t.about.empOrg,
+      image: "/images/team_emp_maryna.jpg",
+    },
+    {
       name: t.about.r1,
       role: t.about.empOrg,
       image: "/images/team_emp_1.jpg",

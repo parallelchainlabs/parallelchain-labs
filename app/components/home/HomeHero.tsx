@@ -32,7 +32,7 @@ export default function HomeHero({ onOpenConsultation }: HomeHeroProps) {
         <div className="max-w-2xl lg:max-w-3xl space-y-6 text-center lg:text-left">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold font-heading tracking-tight leading-[1.15] text-white">
             ParallelChain{" "}
-            <span className="text-[#2CCFD3] inline-block">Labs</span>
+            <span className="text-[#2CCFD3] inline-block">Lab</span>
           </h1>
 
           {/* Company Overview */}

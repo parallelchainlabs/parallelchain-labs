@@ -24,9 +24,9 @@ const notoSansSc = Noto_Sans_SC({
 
 export const metadata: Metadata = {
   title:
-    "ParallelChain Labs | Blockchain and AI Research & Development",
+    "ParallelChain Lab | Blockchain and AI Research & Development",
   description:
-    "ParallelChain Labs is a software research and development company focused on building blockchain and AI technologies with real-world applications.",
+    "ParallelChain Lab is a software research and development company focused on building blockchain and AI technologies with real-world applications.",
   icons: {
     icon: [
       { url: "/logo/logo.png", type: "image/png" },
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
   },
   manifest: "/site.webmanifest",
   appleWebApp: {
-    title: "ParallelChain Labs",
+    title: "ParallelChain Lab",
     statusBarStyle: "black-translucent",
   },
 };

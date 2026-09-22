@@ -54,7 +54,7 @@ export default function PortfolioHero({
           <div className="lg:col-span-5 flex justify-center lg:justify-end">
             <Image
               src="/images/portfolio_hero_3d.png"
-              alt="ParallelChain Labs blockchain and AI portfolio illustration"
+              alt="ParallelChain Lab blockchain and AI portfolio illustration"
               width={600}
               height={450}
               className="w-full h-auto object-contain pointer-events-none"

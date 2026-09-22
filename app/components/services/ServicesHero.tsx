@@ -63,7 +63,7 @@ export default function ServicesHero({
           <div className="lg:col-span-5 hidden lg:flex justify-center lg:justify-end">
             <Image
               src="/images/services_hero_3d.png"
-              alt="ParallelChain Labs blockchain and AI services illustration"
+              alt="ParallelChain Lab blockchain and AI services illustration"
               width={600}
               height={450}
               className="w-full h-auto object-contain pointer-events-none"

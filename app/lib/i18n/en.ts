@@ -45,14 +45,14 @@ export const en = {
     emailPlaceholder: "Enter your email address",
     subscribe: "Request updates",
     subscribed: "Request received. We will write back from the lab inbox.",
-    copyright: "© 2026 ParallelChain Labs. All rights reserved.",
+    copyright: "© 2026 ParallelChain Lab. All rights reserved.",
     builtWith: "Research and engineering for trusted digital infrastructure.",
     dataSafe: "Your data is safe with us.",
   },
   home: {
     badge: "BLOCKCHAIN AND AI RESEARCH",
-    p1: "ParallelChain Labs is a software research and development company focused on building blockchain and AI technologies with real-world applications.",
-    p2: "The company develops both permissioned and permissionless blockchain platforms, combining expertise in distributed systems, artificial intelligence, cybersecurity and digital identity. ParallelChain Labs describes its mission as bridging centralized Web2 systems with decentralized Web3 technologies to create a more connected and user-centric internet.",
+    p1: "ParallelChain Lab is a software research and development company focused on building blockchain and AI technologies with real-world applications.",
+    p2: "The company develops both permissioned and permissionless blockchain platforms, combining expertise in distributed systems, artificial intelligence, cybersecurity and digital identity. ParallelChain Lab describes its mission as bridging centralized Web2 systems with decentralized Web3 technologies to create a more connected and user-centric internet.",
     book: "Book a Consultation",
     trusted: "OUR PLATFORMS",
     whatWeDo: "WHAT WE DO",
@@ -152,7 +152,7 @@ export const en = {
     send: "Send inquiry",
     sentTitle: "We received your inquiry",
     sentDesc:
-      "The lab has this request. We aim to reply within 24 business hours from info@parallelchain-labs.com.",
+      "The lab has this request. We aim to reply within 24 business hours from hiring@parallelchain-lab.com.",
     sendAnother: "Send Another Message",
     privacyAlert: "Please agree to the Privacy Policy to proceed.",
     getInTouch: "Get in Touch",
@@ -186,13 +186,13 @@ export const en = {
     faqTitle: "Frequently Asked Questions",
     faq1q: "How long does it take to get a response?",
     faq1a:
-      "We aim to reply within 24 business hours (Singapore time) from info@parallelchain-labs.com.",
+      "We aim to reply within 24 business hours (Singapore time) from hiring@parallelchain-lab.com.",
     faq2q: "What kinds of organizations do you work with?",
     faq2a:
       "We work with enterprises, financial institutions, and partners who need permissioned or public blockchain rails, identity, or AI on trusted infrastructure.",
     faq3q: "Can you sign an NDA?",
     faq3a:
-      "Yes. Write to info@parallelchain-labs.com and we can put a non-disclosure agreement in place before a detailed technical discussion.",
+      "Yes. Write to hiring@parallelchain-lab.com and we can put a non-disclosure agreement in place before a detailed technical discussion.",
     faq4q: "What does a typical engagement look like?",
     faq4a:
       "Most work starts as a research or architecture discussion, then a pilot on Enterprise, identity, or Mainnet/IPC, then a production deployment if the fit is right.",
@@ -218,7 +218,7 @@ export const en = {
     submit: "Send inquiry",
     doneTitle: "We received your inquiry",
     doneDesc:
-      "The lab has this request. We aim to reply within 24 business hours from info@parallelchain-labs.com.",
+      "The lab has this request. We aim to reply within 24 business hours from hiring@parallelchain-lab.com.",
     thankYou: "Thank you,",
     close: "Close Window",
     closeAria: "Close modal",
@@ -233,7 +233,7 @@ export const en = {
     title2: "Building",
     title3: "Trusted Rails.",
     intro:
-      "ParallelChain Labs is a software research and development company focused on blockchain and AI technologies with real-world applications. We build permissioned and permissionless platforms, privacy-preserving identity, and intelligence on trusted infrastructure.",
+      "ParallelChain Lab is a software research and development company focused on blockchain and AI technologies with real-world applications. We build permissioned and permissionless platforms, privacy-preserving identity, and intelligence on trusted infrastructure.",
     founded: "Founded",
     dual: "Dual",
     chainPlatforms: "Chain Platforms",
@@ -279,7 +279,7 @@ export const en = {
       "Researchers, engineers, and designers building protocols, identity, AI, and distributed systems.",
     prevMember: "Previous employee",
     nextMember: "Next employee",
-    empOrg: "ParallelChain Labs",
+    empOrg: "ParallelChain Lab",
     r1: "Protocol Engineer",
     b1: "Designs permissioned and permissionless protocol layers for production dApps.",
     r2: "Cryptography & Identity Engineer",
@@ -296,12 +296,14 @@ export const en = {
     b7: "Implements on-chain logic for Mainnet, Enterprise, and Inter-ParallelChain flows.",
     r8: "Product Designer",
     b8: "Designs wallets, identity flows, and operator consoles people can actually use.",
+    r9: "Maryna Kushnirenko",
+    b9: "Part of the ParallelChain Lab team building trusted blockchain and AI products.",
     cultureEyebrow: "ENGINEERING CULTURE",
     cultureTitle1: "Research-led.",
     cultureTitle2: "Production-grade.",
     cultureDesc:
-      "ParallelChain Labs engineers work across protocol design, cryptography, identity, and AI — shipping systems that have to hold up under real network and adversarial conditions.",
-    lifeAt: "Life at ParallelChain Labs",
+      "ParallelChain Lab engineers work across protocol design, cryptography, identity, and AI — shipping systems that have to hold up under real network and adversarial conditions.",
+    lifeAt: "Life at ParallelChain Lab",
     c1: "Work From Anywhere",
     c1d: "Flexibility across timezones",
     c2: "Strong Collaboration",
@@ -325,14 +327,14 @@ export const en = {
     title2: "Web2 and",
     title3: "Web3",
     intro:
-      "ParallelChain Labs builds decentralized applications, privacy-preserving identity systems, financial protocols, and AI on trusted infrastructure with real-world applications.",
+      "ParallelChain Lab builds decentralized applications, privacy-preserving identity systems, financial protocols, and AI on trusted infrastructure with real-world applications.",
     talk: "Let's Talk About Your Project",
     viewWork: "View Our Work",
     offerEyebrow: "WHAT WE OFFER",
     offerTitle1: "Blockchain and AI Research",
     offerTitle2: "With Real-World Applications",
     offerDesc:
-      "ParallelChain Labs develops protocols, identity systems, financial applications, and AI infrastructure that connect centralized Web2 systems with decentralized Web3 technologies.",
+      "ParallelChain Lab develops protocols, identity systems, financial applications, and AI infrastructure that connect centralized Web2 systems with decentralized Web3 technologies.",
     discuss: "Discuss this capability",
     s1Title: "Decentralized Applications & Protocols",
     s1Desc:
@@ -436,21 +438,21 @@ export const en = {
     updated: "Last updated: 3 September 2026",
     back: "Back to contact",
     privacy1:
-      "ParallelChain Labs (Singapore) operates this website. Contact: info@parallelchain-labs.com, 100 Tras Street, #16-01, 100 AM, Singapore 079027, telephone +852 2325 6667.",
+      "ParallelChain Lab (Singapore) operates this website. Contact: hiring@parallelchain-lab.com, 100 Tras Street, #16-01, 100 AM, Singapore 079027, telephone +852 2325 6667.",
     privacy2:
       "If you email us or use a contact form, we receive the name, email, organization, and message you send so we can reply. We do not sell this information. We keep inquiry records only as long as needed to respond and, if you ask, to continue a technical discussion.",
     privacy3:
       "This site may store a language preference in your browser (local storage). We do not use that for advertising. Embedded maps are provided by Google and are subject to Google’s terms.",
     privacy4:
-      "To access, correct, or delete inquiry data, email info@parallelchain-labs.com. If Singapore or other applicable law gives you further rights, we will handle those requests through the same address.",
+      "To access, correct, or delete inquiry data, email hiring@parallelchain-lab.com. If Singapore or other applicable law gives you further rights, we will handle those requests through the same address.",
     terms1:
-      "This website describes ParallelChain Labs research and products for information only. It is not an offer of securities, a guarantee of performance, or legal advice.",
+      "This website describes ParallelChain Lab research and products for information only. It is not an offer of securities, a guarantee of performance, or legal advice.",
     terms2:
       "Product names such as ParallelChain Enterprise, Mainnet, BINGO, ParallelWallet, and Inter-ParallelChain Communication refer to technologies developed by the lab. Third-party marks, if any, belong to their owners.",
     terms3:
-      "Content on this site is provided “as is.” We may update pages without notice. For a binding engagement, use a written agreement with ParallelChain Labs.",
+      "Content on this site is provided “as is.” We may update pages without notice. For a binding engagement, use a written agreement with ParallelChain Lab.",
     terms4:
-      "Questions about these terms: info@parallelchain-labs.com.",
+      "Questions about these terms: hiring@parallelchain-lab.com.",
   },
   ...siteEn,
 };

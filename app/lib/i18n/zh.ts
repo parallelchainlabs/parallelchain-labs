@@ -46,14 +46,14 @@ export const zh: Messages = {
     emailPlaceholder: "请输入您的电子邮箱",
     subscribe: "申请动态",
     subscribed: "已收到申请。实验室邮箱会回复您。",
-    copyright: "© 2026 ParallelChain Labs. 保留所有权利。",
+    copyright: "© 2026 ParallelChain Lab. 保留所有权利。",
     builtWith: "以研究与工程打造可信数字基础设施。",
     dataSafe: "您的数据由我们妥善保护。",
   },
   home: {
     badge: "区块链与人工智能研究",
-    p1: "ParallelChain Labs 是一家软件研发公司，专注于构建具有真实落地场景的区块链与人工智能技术。",
-    p2: "公司同时开发许可链与非许可链平台，结合分布式系统、人工智能、网络安全与数字身份方面的专长。ParallelChain Labs 的使命是连接中心化的 Web2 系统与去中心化的 Web3 技术，打造更互联、更以用户为中心的互联网。",
+    p1: "ParallelChain Lab 是一家软件研发公司，专注于构建具有真实落地场景的区块链与人工智能技术。",
+    p2: "公司同时开发许可链与非许可链平台，结合分布式系统、人工智能、网络安全与数字身份方面的专长。ParallelChain Lab 的使命是连接中心化的 Web2 系统与去中心化的 Web3 技术，打造更互联、更以用户为中心的互联网。",
     book: "预约咨询",
     trusted: "我们的平台",
     whatWeDo: "我们的业务",
@@ -145,7 +145,7 @@ export const zh: Messages = {
     send: "发送问询",
     sentTitle: "我们已收到您的问询",
     sentDesc:
-      "实验室已记录本次请求。我们会在 24 个工作小时内通过 info@parallelchain-labs.com 回复。",
+      "实验室已记录本次请求。我们会在 24 个工作小时内通过 hiring@parallelchain-lab.com 回复。",
     sendAnother: "再发一条消息",
     privacyAlert: "请先同意隐私政策后再提交。",
     getInTouch: "联系方式",
@@ -178,13 +178,13 @@ export const zh: Messages = {
     faqTitle: "常见问题",
     faq1q: "通常多久能收到回复？",
     faq1a:
-      "我们目标在 24 个工作小时内（新加坡时间）通过 info@parallelchain-labs.com 回复。",
+      "我们目标在 24 个工作小时内（新加坡时间）通过 hiring@parallelchain-lab.com 回复。",
     faq2q: "你们与哪些机构合作？",
     faq2a:
       "我们与需要许可链或公有链轨道、身份，或可信基础设施上人工智能的企业、金融机构及合作伙伴合作。",
     faq3q: "可以签署保密协议吗？",
     faq3a:
-      "可以。请写信至 info@parallelchain-labs.com，我们可在详细技术讨论前安排保密协议。",
+      "可以。请写信至 hiring@parallelchain-lab.com，我们可在详细技术讨论前安排保密协议。",
     faq4q: "典型合作是怎样的？",
     faq4a:
       "多数从研究或架构讨论开始，再在 Enterprise、身份或主网/IPC 上做试点，合适后再进入生产部署。",
@@ -209,7 +209,7 @@ export const zh: Messages = {
     submit: "发送问询",
     doneTitle: "我们已收到您的问询",
     doneDesc:
-      "实验室已记录本次请求。我们会在 24 个工作小时内通过 info@parallelchain-labs.com 回复。",
+      "实验室已记录本次请求。我们会在 24 个工作小时内通过 hiring@parallelchain-lab.com 回复。",
     thankYou: "谢谢，",
     close: "关闭窗口",
     closeAria: "关闭弹窗",
@@ -224,7 +224,7 @@ export const zh: Messages = {
     title2: "构建",
     title3: "可信轨道。",
     intro:
-      "ParallelChain Labs 是一家软件研发公司，专注于具有真实落地场景的区块链与人工智能技术。我们构建许可链与非许可链平台、隐私保护身份，以及运行在可信基础设施上的智能能力。",
+      "ParallelChain Lab 是一家软件研发公司，专注于具有真实落地场景的区块链与人工智能技术。我们构建许可链与非许可链平台、隐私保护身份，以及运行在可信基础设施上的智能能力。",
     founded: "成立",
     dual: "双链",
     chainPlatforms: "平台体系",
@@ -269,7 +269,7 @@ export const zh: Messages = {
     teamDesc: "研究、工程与设计同事，共同构建协议、身份、人工智能与分布式系统。",
     prevMember: "上一位员工",
     nextMember: "下一位员工",
-    empOrg: "ParallelChain Labs",
+    empOrg: "ParallelChain Lab",
     r1: "协议工程师",
     b1: "为生产级去中心化应用设计许可与非许可协议层。",
     r2: "密码学与身份工程师",
@@ -286,12 +286,14 @@ export const zh: Messages = {
     b7: "实现 Mainnet、Enterprise 与跨链通信相关的链上逻辑。",
     r8: "产品设计师",
     b8: "设计钱包、身份流程与运维控制台，让系统真正可用。",
+    r9: "Maryna Kushnirenko",
+    b9: "ParallelChain Lab 团队成员，参与可信区块链与人工智能产品建设。",
     cultureEyebrow: "工程文化",
     cultureTitle1: "研究驱动。",
     cultureTitle2: "生产级交付。",
     cultureDesc:
-      "ParallelChain Labs 的工程师覆盖协议设计、密码学、身份与人工智能，交付必须在真实网络与对抗环境下站得住的系统。",
-    lifeAt: "ParallelChain Labs 的工作生活",
+      "ParallelChain Lab 的工程师覆盖协议设计、密码学、身份与人工智能，交付必须在真实网络与对抗环境下站得住的系统。",
+    lifeAt: "ParallelChain Lab 的工作生活",
     c1: "随处办公",
     c1d: "跨时区灵活协作",
     c2: "紧密协作",
@@ -315,14 +317,14 @@ export const zh: Messages = {
     title2: "Web2 与",
     title3: "Web3",
     intro:
-      "ParallelChain Labs 构建去中心化应用、隐私保护身份系统、金融协议，以及运行在可信基础设施上、面向真实场景的人工智能。",
+      "ParallelChain Lab 构建去中心化应用、隐私保护身份系统、金融协议，以及运行在可信基础设施上、面向真实场景的人工智能。",
     talk: "聊聊您的项目",
     viewWork: "查看我们的成果",
     offerEyebrow: "我们提供",
     offerTitle1: "区块链与人工智能研究",
     offerTitle2: "面向真实业务场景",
     offerDesc:
-      "ParallelChain Labs 开发协议、身份系统、金融应用与人工智能基础设施，连接中心化 Web2 系统与去中心化 Web3 技术。",
+      "ParallelChain Lab 开发协议、身份系统、金融应用与人工智能基础设施，连接中心化 Web2 系统与去中心化 Web3 技术。",
     discuss: "讨论这项能力",
     s1Title: "去中心化应用与协议",
     s1Desc:
@@ -418,21 +420,21 @@ export const zh: Messages = {
     updated: "最近更新：2026 年 9 月 3 日",
     back: "返回联系页",
     privacy1:
-      "本网站由 ParallelChain Labs（新加坡）运营。联系方式：info@parallelchain-labs.com，新加坡 079027，Tras Street 100 号，#16-01，100 AM，电话 +852 2325 6667。",
+      "本网站由 ParallelChain Lab（新加坡）运营。联系方式：hiring@parallelchain-lab.com，新加坡 079027，Tras Street 100 号，#16-01，100 AM，电话 +852 2325 6667。",
     privacy2:
       "若您发邮件或使用联系表单，我们会收到您提供的姓名、邮箱、机构与留言以便回复。我们不会出售这些信息。问询记录仅在回复及（如您要求）继续技术讨论所需期间保留。",
     privacy3:
       "本站可能在浏览器中保存语言偏好（本地存储），不用于广告。嵌入地图由 Google 提供，适用 Google 条款。",
     privacy4:
-      "如需查阅、更正或删除问询数据，请发邮件至 info@parallelchain-labs.com。若新加坡或其他适用法律赋予您更多权利，我们通过同一地址处理。",
+      "如需查阅、更正或删除问询数据，请发邮件至 hiring@parallelchain-lab.com。若新加坡或其他适用法律赋予您更多权利，我们通过同一地址处理。",
     terms1:
-      "本网站仅介绍 ParallelChain Labs 的研究与产品，不构成证券要约、业绩保证或法律意见。",
+      "本网站仅介绍 ParallelChain Lab 的研究与产品，不构成证券要约、业绩保证或法律意见。",
     terms2:
       "ParallelChain Enterprise、Mainnet、BINGO、ParallelWallet 与 Inter-ParallelChain Communication 等名称指实验室开发的技术。第三方商标归其权利人所有。",
     terms3:
-      "网站内容按“现状”提供。我们可能不经通知更新页面。具约束力的合作须以与 ParallelChain Labs 签订的书面协议为准。",
+      "网站内容按“现状”提供。我们可能不经通知更新页面。具约束力的合作须以与 ParallelChain Lab 签订的书面协议为准。",
     terms4:
-      "条款相关问题请联系 info@parallelchain-labs.com。",
+      "条款相关问题请联系 hiring@parallelchain-lab.com。",
   },
   ...siteZh,
 };

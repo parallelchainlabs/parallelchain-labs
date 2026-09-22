@@ -52,7 +52,7 @@ export default function Footer() {
                 className="w-10 h-10 rounded-lg object-contain bg-white"
               />
               <span className="text-xl font-bold font-heading text-white">
-                ParallelChain<span className="text-[#2CCFD3]"> Labs</span>
+                ParallelChain<span className="text-[#2CCFD3]"> Lab</span>
               </span>
             </Link>
             <p className="text-xs text-slate-400 max-w-sm leading-relaxed">
@@ -246,21 +246,21 @@ export default function Footer() {
                 <li className="flex items-center gap-2.5 text-slate-400">
                   <Mail className="w-4 h-4 text-[#2CCFD3] shrink-0" />
                   <a
-                    href="mailto:info@parallelchain-labs.com"
+                    href="mailto:hiring@parallelchain-lab.com"
                     className="hover:text-white transition-colors"
                   >
-                    info@parallelchain-labs.com
+                    hiring@parallelchain-lab.com
                   </a>
                 </li>
                 <li className="flex items-center gap-2.5 text-slate-400">
                   <FaTelegram className="w-4 h-4 text-[#2CCFD3] shrink-0" />
                   <a
-                    href="https://t.me/InfoParallelChainLabs"
+                    href="https://t.me/hiring_parallelchainlab"
                     target="_blank"
                     rel="noreferrer"
                     className="hover:text-white transition-colors"
                   >
-                    @InfoParallelChainLabs
+                    @hiring_parallelchainlab
                   </a>
                 </li>
               </ul>

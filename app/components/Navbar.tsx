@@ -53,7 +53,7 @@ export default function Navbar({ onOpenConsultation }: NavbarProps) {
             priority
           />
           <span className="text-lg lg:text-2xl font-bold font-heading tracking-tight text-white">
-            ParallelChain<span className="text-[#2CCFD3]"> Labs</span>
+            ParallelChain<span className="text-[#2CCFD3]"> Lab</span>
           </span>
         </Link>
 

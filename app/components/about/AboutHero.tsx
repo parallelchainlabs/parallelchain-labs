@@ -102,7 +102,7 @@ export default function AboutHero() {
             <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-slate-700/80 group">
               <Image
                 src="/images/about_lab_hero.png"
-                alt="ParallelChain Labs blockchain and AI research lab"
+                alt="ParallelChain Lab blockchain and AI research lab"
                 width={600}
                 height={400}
                 className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500"

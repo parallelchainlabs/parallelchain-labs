@@ -11,7 +11,7 @@ export default function InteractiveMapSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="relative rounded-3xl overflow-hidden border border-slate-300 shadow-xl h-[420px] bg-slate-200">
           <iframe
-            title="ParallelChain Labs Headquarters Location Map"
+            title="ParallelChain Lab Headquarters Location Map"
             src="https://maps.google.com/maps?q=100+Tras+Street+Singapore+079027&t=&z=16&ie=UTF8&iwloc=&output=embed"
             width="100%"
             height="100%"
