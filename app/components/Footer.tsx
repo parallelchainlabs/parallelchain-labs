@@ -246,21 +246,21 @@ export default function Footer() {
                 <li className="flex items-center gap-2.5 text-slate-400">
                   <Mail className="w-4 h-4 text-[#2CCFD3] shrink-0" />
                   <a
-                    href="mailto:hiring@parallelchain-lab.com"
+                    href="mailto:support@parallelchain-lab.com"
                     className="hover:text-white transition-colors"
                   >
-                    hiring@parallelchain-lab.com
+                    support@parallelchain-lab.com
                   </a>
                 </li>
                 <li className="flex items-center gap-2.5 text-slate-400">
                   <FaTelegram className="w-4 h-4 text-[#2CCFD3] shrink-0" />
                   <a
-                    href="https://t.me/hiring_parallelchainlab"
+                    href="https://t.me/careers_parallelchainlab"
                     target="_blank"
                     rel="noreferrer"
                     className="hover:text-white transition-colors"
                   >
-                    @hiring_parallelchainlab
+                    @careers_parallelchainlab
                   </a>
                 </li>
               </ul>

@@ -6,11 +6,11 @@ export const siteZh: typeof siteEn = {
     sending: "发送中…",
     receivedTitle: "我们已收到您的问询",
     receivedDesc:
-      "实验室已记录本次请求。我们会在 24 个工作小时内通过 hiring@parallelchain-lab.com 回复。",
+      "实验室已记录本次请求。我们会在 24 个工作小时内通过 support@parallelchain-lab.com 回复。",
     reference: "编号",
     summary: "您提交的内容",
     sendAnother: "再发一条",
-    error: "发送失败。请重试，或直接写信至 hiring@parallelchain-lab.com。",
+    error: "发送失败。请重试，或直接写信至 support@parallelchain-lab.com。",
     copy: "复制编号",
     copied: "已复制",
     requestUpdates: "申请动态",

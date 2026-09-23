@@ -152,7 +152,7 @@ export const en = {
     send: "Send inquiry",
     sentTitle: "We received your inquiry",
     sentDesc:
-      "The lab has this request. We aim to reply within 24 business hours from hiring@parallelchain-lab.com.",
+      "The lab has this request. We aim to reply within 24 business hours from support@parallelchain-lab.com.",
     sendAnother: "Send Another Message",
     privacyAlert: "Please agree to the Privacy Policy to proceed.",
     getInTouch: "Get in Touch",
@@ -186,13 +186,13 @@ export const en = {
     faqTitle: "Frequently Asked Questions",
     faq1q: "How long does it take to get a response?",
     faq1a:
-      "We aim to reply within 24 business hours (Singapore time) from hiring@parallelchain-lab.com.",
+      "We aim to reply within 24 business hours (Singapore time) from support@parallelchain-lab.com.",
     faq2q: "What kinds of organizations do you work with?",
     faq2a:
       "We work with enterprises, financial institutions, and partners who need permissioned or public blockchain rails, identity, or AI on trusted infrastructure.",
     faq3q: "Can you sign an NDA?",
     faq3a:
-      "Yes. Write to hiring@parallelchain-lab.com and we can put a non-disclosure agreement in place before a detailed technical discussion.",
+      "Yes. Write to support@parallelchain-lab.com and we can put a non-disclosure agreement in place before a detailed technical discussion.",
     faq4q: "What does a typical engagement look like?",
     faq4a:
       "Most work starts as a research or architecture discussion, then a pilot on Enterprise, identity, or Mainnet/IPC, then a production deployment if the fit is right.",
@@ -218,7 +218,7 @@ export const en = {
     submit: "Send inquiry",
     doneTitle: "We received your inquiry",
     doneDesc:
-      "The lab has this request. We aim to reply within 24 business hours from hiring@parallelchain-lab.com.",
+      "The lab has this request. We aim to reply within 24 business hours from support@parallelchain-lab.com.",
     thankYou: "Thank you,",
     close: "Close Window",
     closeAria: "Close modal",
@@ -438,13 +438,13 @@ export const en = {
     updated: "Last updated: 3 September 2026",
     back: "Back to contact",
     privacy1:
-      "ParallelChain Lab (Singapore) operates this website. Contact: hiring@parallelchain-lab.com, 100 Tras Street, #16-01, 100 AM, Singapore 079027, telephone +852 2325 6667.",
+      "ParallelChain Lab (Singapore) operates this website. Contact: support@parallelchain-lab.com, 100 Tras Street, #16-01, 100 AM, Singapore 079027, telephone +852 2325 6667.",
     privacy2:
       "If you email us or use a contact form, we receive the name, email, organization, and message you send so we can reply. We do not sell this information. We keep inquiry records only as long as needed to respond and, if you ask, to continue a technical discussion.",
     privacy3:
       "This site may store a language preference in your browser (local storage). We do not use that for advertising. Embedded maps are provided by Google and are subject to Google’s terms.",
     privacy4:
-      "To access, correct, or delete inquiry data, email hiring@parallelchain-lab.com. If Singapore or other applicable law gives you further rights, we will handle those requests through the same address.",
+      "To access, correct, or delete inquiry data, email support@parallelchain-lab.com. If Singapore or other applicable law gives you further rights, we will handle those requests through the same address.",
     terms1:
       "This website describes ParallelChain Lab research and products for information only. It is not an offer of securities, a guarantee of performance, or legal advice.",
     terms2:
@@ -452,7 +452,7 @@ export const en = {
     terms3:
       "Content on this site is provided “as is.” We may update pages without notice. For a binding engagement, use a written agreement with ParallelChain Lab.",
     terms4:
-      "Questions about these terms: hiring@parallelchain-lab.com.",
+      "Questions about these terms: support@parallelchain-lab.com.",
   },
   ...siteEn,
 };
